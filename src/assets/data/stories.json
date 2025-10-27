@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "quote": "Yıllarca sessiz kaldım, korkudan kimseye bir şey söyleyemedim. Ama artık güçlüyüm. Kendimi ve çocuklarımı korumayı öğrendim. Her kadın bunu hak ediyor.",
+    "author": "Ayşe K.",
+    "age": "34",
+    "location": "İstanbul"
+  },
+  {
+    "id": 2,
+    "quote": "Ekonomik bağımsızlık bana özgürlüğümü geri kazandırdı. Artık kimseye muhtaç değilim. Her kadın kendi ayakları üzerinde durabilmeli.",
+    "author": "Zeynep M.",
+    "age": "29",
+    "location": "Ankara"
+  },
+  {
+    "id": 3,
+    "quote": "ŞÖNİM'deki uzmanlar hayatımı değiştirdi. Psikolojik destek aldım, yasal haklarımı öğrendim. Şimdi yeni bir hayat kuruyorum.",
+    "author": "Fatma Y.",
+    "age": "41",
+    "location": "İzmir"
+  },
+  {
+    "id": 4,
+    "quote": "Şiddet sadece fiziksel değil. Yıllarca psikolojik şiddete maruz kaldım. Artık kendime değer veriyorum ve bunu hak ettiğimi biliyorum.",
+    "author": "Elif S.",
+    "age": "37",
+    "location": "Bursa"
+  },
+  {
+    "id": 5,
+    "quote": "Çocuklarım için güçlü olmayı öğrendim. Onlara şiddetsiz bir gelecek sunmak istiyorum. Bu mücadelede yalnız olmadığımı bilmek çok önemli.",
+    "author": "Merve D.",
+    "age": "31",
+    "location": "Antalya"
+  },
+  {
+    "id": 6,
+    "quote": "183'ü aramak cesaret ister ama bu cesaret hayatınızı kurtarabilir. Ben aradım ve doğru yardımı aldım. Artık güvendeyim.",
+    "author": "Selin A.",
+    "age": "28",
+    "location": "Eskişehir"
+  },
+  {
+    "id": 7,
+    "quote": "Kadın dayanışması beni ayakta tuttu. Diğer kadınların hikayelerini dinlemek, yalnız olmadığımı anlamak çok değerliydi.",
+    "author": "Nilüfer K.",
+    "age": "45",
+    "location": "Adana"
+  },
+  {
+    "id": 8,
+    "quote": "Eğitim aldım, meslek sahibi oldum. Artık kimseye muhtaç değilim. Her kadın eğitim hakkına sahip olmalı.",
+    "author": "Deniz T.",
+    "age": "26",
+    "location": "Konya"
+  }
+]
+
+
+
+
+
+
+

@@ -1,0 +1,230 @@
+[
+  {
+    "id": 1,
+    "title": "Eşim Bana Bağırıyor",
+    "description": "Eşiniz işten geldi, yemek hazır değil. Size bağırıyor ve hakaret ediyor. Ne yaparsınız?",
+    "icon": "😡",
+    "type": "psikolojik-şiddet",
+    "statistics": "Türkiye'de kadınların %67'si psikolojik şiddete maruz kalıyor",
+    "choices": [
+      {
+        "id": "a",
+        "text": "Özür dilerim, hemen hazırlarım",
+        "score": -10,
+        "result": "Bu seçim seni daha da bağımlı hale getirir. Şiddet kabul edilemez.",
+        "explanation": "Özür dilemek şiddeti meşrulaştırır. Sen hiçbir şey için özür dilemek zorunda değilsin."
+      },
+      {
+        "id": "b", 
+        "text": "Sen de yapabilirsin, ben de yorgunum",
+        "score": 5,
+        "result": "Haklısın! Ev işleri ortak sorumluluk.",
+        "explanation": "Eşitlikçi yaklaşım doğru. Ev işleri sadece kadının sorumluluğu değil."
+      },
+      {
+        "id": "c",
+        "text": "Sakin ol, konuşalım",
+        "score": 8,
+        "result": "Mükemmel! İletişim en iyi çözüm.",
+        "explanation": "Sakin kalıp iletişim kurmak en sağlıklı yaklaşım. Şiddet hiçbir sorunu çözmez."
+      },
+      {
+        "id": "d",
+        "text": "Odama gidiyorum",
+        "score": 3,
+        "result": "Kendini korumak önemli ama sorunu çözmez.",
+        "explanation": "Kendini korumak doğru ama sorunun kökenini çözmek için profesyonel yardım al."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Ekonomik Kontrol",
+    "description": "Eşiniz maaşınızı alıyor, size harçlık veriyor ve harcamalarınızı sorguluyor. Ne yaparsınız?",
+    "icon": "💰",
+    "type": "ekonomik-şiddet", 
+    "statistics": "Kadınların %45'i ekonomik şiddete maruz kalıyor",
+    "choices": [
+      {
+        "id": "a",
+        "text": "Kabul ediyorum, o daha iyi yönetir",
+        "score": -15,
+        "result": "Bu ekonomik bağımlılık yaratır. Tehlikeli!",
+        "explanation": "Ekonomik bağımsızlık kadının güvenliği için kritik. Kendi paranı yönetme hakkın var."
+      },
+      {
+        "id": "b",
+        "text": "Kendi hesabımı istiyorum",
+        "score": 10,
+        "result": "Harika! Ekonomik bağımsızlık çok önemli.",
+        "explanation": "Kendi hesabın olması ekonomik güvenlik sağlar. Bu senin temel hakkın."
+      },
+      {
+        "id": "c", 
+        "text": "Ortak hesap açalım",
+        "score": 7,
+        "result": "İyi bir çözüm ama kendi hesabın da olmalı.",
+        "explanation": "Ortak hesap güzel ama kendi hesabın da olmalı. Güvenlik için önemli."
+      },
+      {
+        "id": "d",
+        "text": "Bu normal, sorun yok",
+        "score": -5,
+        "result": "Bu normal değil! Ekonomik şiddet ciddi bir sorun.",
+        "explanation": "Ekonomik kontrol şiddettir. Senin kendi paranı yönetme hakkın var."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Sosyal İzolasyon",
+    "description": "Eşiniz arkadaşlarınızla görüşmenizi istemiyor, sürekli nerede olduğunuzu soruyor. Ne yaparsınız?",
+    "icon": "👥",
+    "type": "psikolojik-şiddet",
+    "statistics": "Kadınların %52'si sosyal izolasyona maruz kalıyor",
+    "choices": [
+      {
+        "id": "a",
+        "text": "Haklı, aile öncelik",
+        "score": -8,
+        "result": "Aile önemli ama sosyal destek de gerekli.",
+        "explanation": "Sosyal destek sistemi çok önemli. İzolasyon tehlikeli olabilir."
+      },
+      {
+        "id": "b",
+        "text": "Arkadaşlarımı bırakırım",
+        "score": -12,
+        "result": "Çok tehlikeli! Sosyal destek sistemi hayat kurtarır.",
+        "explanation": "Arkadaşların seni korur ve destekler. Onları kaybetme."
+      },
+      {
+        "id": "c",
+        "text": "Sınırlı görüşürüm",
+        "score": 4,
+        "result": "Kompromis iyi ama sınırlarını koru.",
+        "explanation": "Sınırlı görüşmek geçici çözüm. Asıl sorun kontrolcü davranış."
+      },
+      {
+        "id": "d",
+        "text": "Bu normal değil, konuşalım",
+        "score": 9,
+        "result": "Mükemmel! Kontrolcü davranış kabul edilemez.",
+        "explanation": "Sosyal izolasyon şiddettir. Senin arkadaşlarınla görüşme hakkın var."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Fiziksel Tehdit",
+    "description": "Eşiniz tartışma sırasında elini kaldırdı ve 'Bir daha böyle konuşursan...' dedi. Ne yaparsınız?",
+    "icon": "👊",
+    "type": "fiziksel-şiddet",
+    "statistics": "Kadınların %38'i fiziksel şiddete maruz kalıyor",
+    "choices": [
+      {
+        "id": "a",
+        "text": "Sessiz kalırım, kızdırmam",
+        "score": -10,
+        "result": "Sessizlik şiddeti durdurmaz, artırır.",
+        "explanation": "Sessiz kalmak şiddeti meşrulaştırır. Sen hiçbir şey için tehdit edilmeyi hak etmiyorsun."
+      },
+      {
+        "id": "b",
+        "text": "Polisi ararım",
+        "score": 15,
+        "result": "Harika! Fiziksel tehdit ciddi bir suç.",
+        "explanation": "Fiziksel tehdit suçtur. Polisi aramak doğru ve cesur bir davranış."
+      },
+      {
+        "id": "c",
+        "text": "Aileme söylerim",
+        "score": 8,
+        "result": "İyi bir adım! Destek sistemi önemli.",
+        "explanation": "Ailenin desteği önemli ama profesyonel yardım da al."
+      },
+      {
+        "id": "d",
+        "text": "Belki şaka yapıyordur",
+        "score": -8,
+        "result": "Fiziksel tehdit asla şaka değildir!",
+        "explanation": "Fiziksel tehdit ciddi bir uyarıdır. Bu tür davranışları küçümseme."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Dijital Takip",
+    "description": "Eşiniz telefonunuzu kontrol ediyor, sosyal medya hesaplarınızı takip ediyor. Ne yaparsınız?",
+    "icon": "📱",
+    "type": "dijital-şiddet",
+    "statistics": "Kadınların %41'i dijital şiddete maruz kalıyor",
+    "choices": [
+      {
+        "id": "a",
+        "text": "Telefonumu veriyorum, güveniyorum",
+        "score": -12,
+        "result": "Bu güven değil, kontrol! Tehlikeli.",
+        "explanation": "Telefonunu kontrol etmesi güven değil, kontrolcü davranıştır."
+      },
+      {
+        "id": "b",
+        "text": "Şifrelerimi değiştiriyorum",
+        "score": 10,
+        "result": "Mükemmel! Mahremiyet hakkın var.",
+        "explanation": "Mahremiyet hakkın var. Telefonun ve sosyal medya hesapların sadece senin."
+      },
+      {
+        "id": "c",
+        "text": "Sadece önemli mesajları kontrol etsin",
+        "score": -5,
+        "result": "Bu da kontrolcü davranış. Kabul edilemez.",
+        "explanation": "Hiçbir mesajını kontrol etme hakkı yok. Mahremiyet hakkın var."
+      },
+      {
+        "id": "d",
+        "text": "Bu normal, şüpheci biri",
+        "score": -8,
+        "result": "Bu normal değil! Dijital şiddet ciddi bir sorun.",
+        "explanation": "Dijital takip şiddettir. Senin mahremiyet hakkın var."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Çocuklar İçin Endişe",
+    "description": "Eşiniz çocuklarınızın önünde size bağırıyor. Çocuklar korkuyor. Ne yaparsınız?",
+    "icon": "👶",
+    "type": "psikolojik-şiddet",
+    "statistics": "Çocukların %60'ı ev içi şiddete tanık oluyor",
+    "choices": [
+      {
+        "id": "a",
+        "text": "Çocukların önünde tartışmayalım",
+        "score": 6,
+        "result": "İyi düşünce ama sorunu çözmez.",
+        "explanation": "Çocukları korumak önemli ama şiddeti gizlemek çözüm değil."
+      },
+      {
+        "id": "b",
+        "text": "Çocukları odalarına gönderirim",
+        "score": 4,
+        "result": "Geçici çözüm ama asıl sorun devam ediyor.",
+        "explanation": "Çocukları korumak önemli ama şiddeti durdurmak daha önemli."
+      },
+      {
+        "id": "c",
+        "text": "183'ü ararım, çocukları korurum",
+        "score": 15,
+        "result": "Harika! Hem kendini hem çocukları koruyorsun.",
+        "explanation": "Çocukları korumak için yardım almak en doğru davranış. Sen çok güçlüsün."
+      },
+      {
+        "id": "d",
+        "text": "Çocuklar büyüyünce anlar",
+        "score": -10,
+        "result": "Çocuklar şimdi etkileniyor! Hemen yardım al.",
+        "explanation": "Çocuklar şimdi etkileniyor. Şiddet onların gelişimini olumsuz etkiler."
+      }
+    ]
+  }
+]

@@ -1,0 +1,332 @@
+/* Toggle Button */
+.voice-toggle-btn {
+  position: fixed !important;
+  bottom: 20px !important; /* En altta */
+  right: 20px !important;
+  z-index: 9999 !important; /* En yüksek z-index */
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);
+  border: none;
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.voice-toggle-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 30px rgba(139, 92, 246, 0.6);
+}
+
+.voice-toggle-btn:active {
+  transform: scale(0.95);
+}
+
+.toggle-icon {
+  font-size: 2rem;
+}
+
+/* Voice Emergency Widget Styles */
+.voice-emergency-widget {
+  position: fixed !important;
+  bottom: 90px !important; /* Butonun üstünde açılsın */
+  right: 20px !important;
+  z-index: 10000 !important; /* En üstte */
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(139, 92, 246, 0.3);
+  padding: 1.5rem;
+  max-width: 350px;
+  transition: all 0.3s ease;
+  animation: slideUp 0.5s ease;
+}
+
+/* Widget Header */
+.widget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #E5E7EB;
+}
+
+.widget-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #1F2937;
+}
+
+.widget-close-btn {
+  background: #F3F4F6;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #6B7280;
+  transition: all 0.2s ease;
+}
+
+.widget-close-btn:hover {
+  background: #E5E7EB;
+  color: #374151;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.voice-emergency-widget.panic-active {
+  background: linear-gradient(135deg, #DC2626 0%, #991B1B 100%);
+  color: white;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(220, 38, 38, 0.9);
+  }
+}
+
+.voice-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background: #F3F4F6;
+  border-radius: 10px;
+}
+
+.mic-icon {
+  font-size: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.mic-icon.listening {
+  animation: pulse-mic 1s infinite;
+}
+
+@keyframes pulse-mic {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.voice-info {
+  font-size: 0.9rem;
+  color: #6B7280;
+}
+
+.voice-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.voice-activate-btn,
+.voice-deactivate-btn,
+.voice-panic-btn {
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.voice-activate-btn {
+  background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);
+  color: white;
+}
+
+.voice-activate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(139, 92, 246, 0.4);
+}
+
+.voice-deactivate-btn {
+  background: #F59E0B;
+  color: white;
+}
+
+.voice-deactivate-btn:hover {
+  background: #D97706;
+  transform: translateY(-2px);
+}
+
+.voice-panic-btn {
+  background: linear-gradient(135deg, #DC2626 0%, #991B1B 100%);
+  color: white;
+  font-size: 1.1rem;
+  padding: 1rem;
+  animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+  0%, 100% {
+    background: linear-gradient(135deg, #DC2626 0%, #991B1B 100%);
+  }
+  50% {
+    background: linear-gradient(135deg, #F87171 0%, #DC2626 100%);
+  }
+}
+
+.voice-panic-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(220, 38, 38, 0.5);
+}
+
+.detected-command {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #FEF3C7;
+  border-radius: 10px;
+  border-left: 4px solid #F59E0B;
+}
+
+.detected-command p {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  color: #92400E;
+}
+
+.risk-indicator {
+  font-weight: 600;
+}
+
+.risk-high {
+  color: #DC2626;
+}
+
+.risk-medium {
+  color: #F59E0B;
+}
+
+.risk-low {
+  color: #10B981;
+}
+
+.panic-mode-active {
+  text-align: center;
+}
+
+.panic-mode-active h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.panic-mode-active > p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.panic-countdown {
+  font-size: 4rem;
+  font-weight: 900;
+  color: white;
+  margin: 1rem 0;
+  animation: countdown-pulse 1s infinite;
+}
+
+@keyframes countdown-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.panic-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.panic-actions button {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.panic-actions button:first-child {
+  background: white;
+  color: #DC2626;
+}
+
+.panic-actions button:last-child {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+}
+
+.panic-actions button:hover {
+  transform: translateY(-2px);
+}
+
+.location-info {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .voice-toggle-btn {
+    bottom: 90px; /* Crisis Panel'in üstünde */
+    right: 15px;
+    width: 55px;
+    height: 55px;
+  }
+
+  .voice-emergency-widget {
+    bottom: 90px; /* Butonla aynı hizada */
+    right: 15px;
+    left: 15px;
+    max-width: calc(100vw - 30px);
+  }
+}
+
+@media (max-width: 480px) {
+  .voice-toggle-btn {
+    bottom: 85px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .voice-emergency-widget {
+    padding: 1rem;
+    bottom: 85px;
+  }
+}
+

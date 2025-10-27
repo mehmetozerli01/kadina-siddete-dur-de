@@ -1,0 +1,624 @@
+/* Location Finder Styles */
+
+.location-toggle {
+  position: fixed;
+  bottom: 85px;
+  left: 10px;
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  color: white;
+  padding: 14px 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(5, 150, 105, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.location-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(5, 150, 105, 0.4);
+}
+
+.location-icon {
+  font-size: 1.2rem;
+}
+
+.location-text {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Location Panel Modal */
+.location-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  padding: 20px;
+}
+
+.location-panel {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideInUp 0.3s ease-out;
+}
+
+.location-header {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.location-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.close-location {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.close-location:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.location-content {
+  padding: 20px;
+}
+
+/* Search and Filter Section */
+.search-filter-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 12px 15px;
+  border: 2px solid #E5E7EB;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #059669;
+}
+
+.city-filter {
+  padding: 12px 15px;
+  border: 2px solid #E5E7EB;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.city-filter:focus {
+  outline: none;
+  border-color: #059669;
+}
+
+/* Location Status */
+.location-status {
+  margin-bottom: 25px;
+  padding: 15px;
+  border-radius: 12px;
+  background: #F0FDF4;
+  border: 1px solid #BBF7D0;
+}
+
+.loading-indicator {
+  text-align: center;
+  color: #059669;
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid #E5E7EB;
+  border-top: 3px solid #059669;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-message {
+  text-align: center;
+  color: #DC2626;
+}
+
+.error-message p {
+  margin-bottom: 10px;
+}
+
+.retry-btn {
+  background: #DC2626;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.retry-btn:hover {
+  background: #B91C1C;
+}
+
+.location-info {
+  text-align: center;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.location-info.success {
+  background: #D1FAE5;
+  border: 1px solid #A7F3D0;
+  color: #065F46;
+}
+
+.location-info.neutral {
+  background: #F3F4F6;
+  border: 1px solid #D1D5DB;
+  color: #374151;
+}
+
+.location-info p:first-child {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.coordinates {
+  font-size: 0.8rem;
+  color: #6B7280;
+  margin: 5px 0;
+}
+
+.info-text {
+  font-size: 0.75rem;
+  color: #6B7280;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+.get-location-btn,
+.update-location-btn {
+  background: #059669;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.get-location-btn:hover,
+.update-location-btn:hover {
+  background: #047857;
+}
+
+.manual-btn {
+  background: #F59E0B;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.manual-btn:hover {
+  background: #D97706;
+}
+
+/* Centers Section */
+.centers-section h3 {
+  color: var(--text-primary);
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.centers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.center-card {
+  background: white;
+  border: 2px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.center-card:hover {
+  border-color: #059669;
+  box-shadow: 0 4px 15px rgba(5, 150, 105, 0.1);
+}
+
+.center-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.center-header h4 {
+  color: var(--text-primary);
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.distance-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.distance-icon {
+  font-size: 0.9rem;
+}
+
+.distance-value {
+  background: #059669;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.center-meta {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.city-badge {
+  background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.district-badge {
+  background: #E5E7EB;
+  color: #374151;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.center-description {
+  background: #FEF3C7;
+  border-left: 3px solid #F59E0B;
+  padding: 10px;
+  border-radius: 6px;
+  margin: 10px 0;
+  font-size: 0.85rem;
+  color: #92400E;
+  font-style: italic;
+}
+
+.center-details {
+  margin-bottom: 15px;
+}
+
+.center-details p {
+  margin: 5px 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.center-services {
+  margin-bottom: 15px;
+}
+
+.center-services h5 {
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.services-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.service-tag {
+  background: #F0FDF4;
+  color: #059669;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  border: 1px solid #BBF7D0;
+}
+
+.center-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.call-btn {
+  background: #059669;
+  color: white;
+}
+
+.call-btn:hover {
+  background: #047857;
+}
+
+.map-btn {
+  background: #3B82F6;
+  color: white;
+}
+
+.map-btn:hover {
+  background: #2563EB;
+}
+
+/* No Centers */
+.no-centers {
+  text-align: center;
+  padding: 30px;
+  color: var(--text-secondary);
+}
+
+.no-centers p {
+  margin-bottom: 15px;
+}
+
+.all-centers-fallback {
+  margin-top: 20px;
+  padding: 20px;
+  background: #FEF2F2;
+  border-radius: 8px;
+  border: 1px solid #FECACA;
+}
+
+.all-centers-fallback p {
+  margin-bottom: 15px;
+  color: #DC2626;
+}
+
+.emergency-call-btn {
+  background: #DC2626;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.emergency-call-btn:hover {
+  background: #B91C1C;
+}
+
+/* Important Notice Section */
+.important-notice-section {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: #FEF3C7;
+  border-radius: 12px;
+  border: 1px solid #FDE68A;
+}
+
+.important-notice-section h3 {
+  color: #92400E;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.notice-content {
+  color: #78350F;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.notice-content p {
+  margin-bottom: 10px;
+}
+
+.notice-content ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.notice-content li {
+  margin-bottom: 8px;
+}
+
+.notice-content a {
+  color: #059669;
+  text-decoration: underline;
+}
+
+.notice-content a:hover {
+  color: #047857;
+}
+
+/* Emergency Info Section */
+.emergency-info-section {
+  margin-top: 20px;
+  padding: 20px;
+  background: #FEF2F2;
+  border-radius: 12px;
+  border: 1px solid #FECACA;
+}
+
+.emergency-info-section h3 {
+  color: #DC2626;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.emergency-numbers {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.emergency-number-btn {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.emergency-number-btn.primary {
+  background: #DC2626;
+  color: white;
+}
+
+.emergency-number-btn.primary:hover {
+  background: #B91C1C;
+}
+
+.emergency-number-btn.secondary {
+  background: #1F2937;
+  color: white;
+}
+
+.emergency-number-btn.secondary:hover {
+  background: #111827;
+}
+
+.emergency-note {
+  font-size: 0.8rem;
+  color: #7F1D1D;
+  margin: 0;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .location-toggle {
+    bottom: 10px;
+    left: 70px;
+    padding: 12px 16px;
+  }
+  
+  .location-text {
+    display: none;
+  }
+  
+  .location-panel {
+    margin: 10px;
+    max-height: calc(100vh - 20px);
+  }
+  
+  .search-filter-section {
+    flex-direction: column;
+  }
+  
+  .search-input {
+    min-width: 100%;
+  }
+  
+  .center-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  
+  .center-actions {
+    flex-direction: column;
+  }
+  
+  .emergency-numbers {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .location-toggle {
+    left: 10px;
+  }
+  
+  .location-modal-overlay {
+    padding: 10px;
+  }
+  
+  .location-panel {
+    margin: 0;
+    border-radius: 15px;
+  }
+  
+  .location-header {
+    padding: 15px;
+    border-radius: 15px 15px 0 0;
+  }
+  
+  .location-header h2 {
+    font-size: 1.2rem;
+  }
+  
+  .location-content {
+    padding: 15px;
+  }
+}

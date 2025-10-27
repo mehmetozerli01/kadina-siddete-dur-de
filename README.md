@@ -1,70 +1,177 @@
-# Getting Started with Create React App
+# 💜 Kadına Şiddete Dur De
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Kadına yönelik şiddete karşı toplumsal farkındalık oluşturmak ve mağdur kadınlara destek olmak amacıyla geliştirilmiş bir React web uygulaması.
 
-## Available Scripts
+## 📖 Proje Hakkında
 
-In the project directory, you can run:
+**Kadına Şiddete Dur De**, kadına yönelik şiddetle mücadelede farkındalık oluşturmak ve mağdur kadınlara destek olmak amacıyla kurulmuş bir toplumsal sorumluluk projesidir. Amacımız, kadınların şiddetsiz bir yaşam sürmelerini sağlamak ve toplumsal cinsiyet eşitliğinin gerçekleşmesine katkıda bulunmaktır.
 
-### `npm start`
+## ✨ Özellikler
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 🏠 **Ana Sayfa**: Misyon, vizyon ve hızlı erişim bilgileri
+- 📰 **Haberler**: Kadına yönelik şiddetle ilgili güncel haberler ve gelişmeler
+- 💬 **Hikayeler**: Umut dolu başarı hikayeleri
+- 📊 **İstatistikler**: Şiddet türleri ve destek hizmetleri hakkında bilgiler
+- 🆘 **Acil Yardım**: Yardım hatları ve acil durum bilgileri
+- ℹ️ **Hakkımızda**: Proje hakkında detaylı bilgiler
+- 🎭 **Senaryo Oyunu**: Gerçek hayattan alınmış senaryolarla interaktif eğitim
+- 🗺️ **Şiddet Haritası**: Türkiye'de şiddet verilerinin görselleştirilmesi
+- 📚 **Kaynak Kütüphanesi**: PDF, video ve eğitim materyalleri
+- 📈 **Canlı İstatistikler**: Gerçek zamanlı veri görüntüleme
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🚀 **YENİ: AI Destekli Özellikler**
 
-### `npm test`
+- 🎤 **Sesli Komutlu Acil Yardım**: Sesli komutlarla acil yardım çağırma
+  - "Acil Yardım", "Emergency", "Panic" gibi komutlarla otomatik arama
+  - Panic butonu ile 3 saniyede otomatik yardım
+  - ESC veya Space tuşu ile hızlı çıkış
+  - Otomatik konum paylaşımı
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 🤖 **AI Risk Değerlendirme Sistemi**: 
+  - Otomatik risk analizi ve durum değerlendirmesi
+  - Akıllı öneriler ve acil eylem planları
+  - Mesaj içeriği ve ses tonu analizi
+  - Kişiselleştirilmiş destek yönlendirmesi
 
-### `npm run build`
+- 🛡️ **Gelişmiş Güvenlik**: 
+  - Gizli çıkış butonu
+  - Tarayıcı geçmişi temizleme
+  - Otomatik ses kaydı (acil durumlar için)
+  - Güvenli log sistemi
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🚀 Kullanılan Teknolojiler
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **React** 19.2.0 - Modern UI geliştirme
+- **React Router DOM** - Sayfa yönlendirmeleri
+- **CSS3** - Modern ve responsive tasarım
+- **Create React App** - Proje altyapısı
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🎨 Tasarım
 
-### `npm run eject`
+- **Renk Paleti**: 
+  - Mor tonları (Ana renk - Farkındalık simgesi)
+  - Beyaz ve açık gri (Temizlik ve umut)
+  - Turuncu (Acil durum vurgusu)
+- **Responsive**: Mobil, tablet ve desktop uyumlu
+- **Modern**: Minimalist ve kullanıcı dostu arayüz
+- **Erişilebilir**: WCAG standartlarına uygun
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📁 Proje Yapısı
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+src/
+├── components/         # Tekrar kullanılabilir bileşenler
+│   ├── Navbar.jsx     # Navigasyon menüsü
+│   ├── Footer.jsx     # Alt bilgi
+│   ├── NewsCard.jsx   # Haber kartı
+│   ├── StoryCard.jsx  # Hikaye kartı
+│   └── StatCard.jsx   # İstatistik kartı
+├── pages/             # Sayfa bileşenleri
+│   ├── Home.jsx       # Ana sayfa
+│   ├── About.jsx      # Hakkımızda
+│   ├── News.jsx       # Haberler
+│   ├── Stories.jsx    # Hikayeler
+│   ├── Stats.jsx      # İstatistikler
+│   └── Help.jsx       # Yardım hatları
+├── layout/            # Layout bileşenleri
+│   └── MainLayout.jsx # Ana layout
+├── routes/            # Routing yapılandırması
+│   └── AppRouter.jsx  # Ana router
+├── styles/            # CSS dosyaları
+│   ├── global.css     # Global stiller
+│   ├── navbar.css     # Navbar stilleri
+│   ├── footer.css     # Footer stilleri
+│   ├── cards.css      # Card stilleri
+│   └── home.css       # Ana sayfa stilleri
+└── assets/            # Statik dosyalar
+    └── data/          # JSON veri dosyaları
+        ├── news.json  # Haber verileri
+        └── stories.json # Hikaye verileri
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🛠️ Kurulum
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Gereksinimler
 
-## Learn More
+- Node.js (v14 veya üzeri)
+- npm veya yarn
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Adımlar
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. **Projeyi klonlayın:**
+```bash
+git clone [repository-url]
+cd kadina-siddete-dur-de
+```
 
-### Code Splitting
+2. **Bağımlılıkları yükleyin:**
+```bash
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. **Geliştirme sunucusunu başlatın:**
+```bash
+npm start
+```
 
-### Analyzing the Bundle Size
+4. **Tarayıcınızda açın:**
+```
+http://localhost:3000
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📜 Kullanılabilir Komutlar
 
-### Making a Progressive Web App
+- `npm start` - Geliştirme sunucusunu başlatır
+- `npm test` - Test paketini çalıştırır
+- `npm run build` - Production için build oluşturur
+- `npm run eject` - CRA yapılandırmasını dışarı çıkarır (geri alınamaz)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🆘 Acil Yardım Hatları
 
-### Advanced Configuration
+- **183** - ALO Şiddet Hattı (ŞÖNİM) - 7/24 Ücretsiz
+- **155** - Polis İmdat
+- **112** - Sağlık Acil
+- **156** - Jandarma İmdat
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🎯 Önemli Sayfalar
 
-### Deployment
+- `/` - Ana Sayfa
+- `/about` - Hakkımızda
+- `/news` - Haberler
+- `/stories` - Hikayeler
+- `/stats` - İstatistikler
+- `/help` - Acil Yardım Hatları
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🌈 Renk Paleti
 
-### `npm run build` fails to minify
+```css
+--primary-purple: #8B5CF6
+--primary-purple-light: #A78BFA
+--primary-purple-dark: #6D28D9
+--accent-orange: #F59E0B
+--accent-pink: #EC4899
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🤝 Katkıda Bulunma
+
+Bu proje toplumsal farkındalık amacıyla geliştirilmiştir. Katkılarınızı bekliyoruz!
+
+1. Fork edin
+2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
+3. Değişikliklerinizi commit edin (`git commit -m 'feat: Add amazing feature'`)
+4. Branch'inizi push edin (`git push origin feature/amazing-feature`)
+5. Pull Request açın
+
+## 📝 Lisans
+
+Bu proje toplumsal farkındalık amacıyla geliştirilmiştir.
+
+## 💜 Destek ve İletişim
+
+Bu proje, kadına yönelik şiddetle mücadele eden tüm kadınlara ve kuruluşlara adanmıştır.
+
+**Hatırlatma**: Bu bir bilgilendirme ve farkındalık projesidir. Acil durumlarda lütfen 183 veya 155 numaralarını arayın.
+
+---
+
+**"Sen yalnız değilsin. Birlikte daha güçlüyüz."** 💜

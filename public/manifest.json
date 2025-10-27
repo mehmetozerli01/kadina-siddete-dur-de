@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Kadına Şiddete Dur De",
+  "name": "Kadına Şiddete Dur De - Sen Yalnız Değilsin",
+  "description": "Kadına yönelik şiddete karşı farkındalık oluşturmak ve mağdur kadınlara destek olmak için kurulmuş platform",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +21,8 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#8B5CF6",
+  "background_color": "#FFFFFF",
+  "orientation": "portrait-primary",
+  "categories": ["social", "lifestyle", "education"]
 }

@@ -1,0 +1,229 @@
+/* Card Styles */
+
+.card {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* News Card */
+.news-card {
+  cursor: pointer;
+}
+
+.news-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.news-card-content {
+  padding: var(--spacing-md);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card-date {
+  color: var(--primary-purple);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+}
+
+.news-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.news-card-excerpt {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.news-card-link {
+  color: var(--primary-purple);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: gap var(--transition-fast);
+}
+
+.news-card-link:hover {
+  gap: 1rem;
+}
+
+/* Story Card */
+.story-card {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(167, 139, 250, 0.05) 100%);
+  border: 2px solid var(--primary-purple-light);
+}
+
+.story-card-content {
+  padding: var(--spacing-md);
+}
+
+.story-card-quote {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.8;
+  position: relative;
+  padding-left: var(--spacing-md);
+  border-left: 4px solid var(--primary-purple);
+}
+
+.story-card-quote::before {
+  content: '"';
+  font-size: 3rem;
+  color: var(--primary-purple-light);
+  position: absolute;
+  left: -10px;
+  top: -15px;
+  opacity: 0.5;
+}
+
+.story-card-author {
+  font-weight: 600;
+  color: var(--primary-purple-dark);
+  margin-bottom: var(--spacing-xs);
+}
+
+.story-card-meta {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+/* Stat Card */
+.stat-card {
+  text-align: center;
+  padding: var(--spacing-lg);
+  background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-purple-light) 100%);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.stat-card-number {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  color: var(--white);
+  position: relative;
+  z-index: 1;
+}
+
+.stat-card-label {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+}
+
+.stat-card-icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-sm);
+  opacity: 0.9;
+  position: relative;
+  z-index: 1;
+}
+
+.stat-card:hover {
+  transform: scale(1.05);
+}
+
+/* Help Card */
+.help-card {
+  background-color: var(--white);
+  border-left: 5px solid var(--primary-purple);
+}
+
+.help-card-content {
+  padding: var(--spacing-md);
+}
+
+.help-card-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-purple-light) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.75rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.help-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  color: var(--primary-purple-dark);
+}
+
+.help-card-description {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.6;
+}
+
+.help-card-phone {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-orange);
+  margin-bottom: var(--spacing-xs);
+  display: block;
+}
+
+.help-card-hours {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stat-card-number {
+    font-size: 2.5rem;
+  }
+  
+  .news-card-image {
+    height: 180px;
+  }
+  
+  .help-card-phone {
+    font-size: 1.25rem;
+  }
+}
+
+

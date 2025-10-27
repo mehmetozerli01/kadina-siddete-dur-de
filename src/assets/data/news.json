@@ -1,0 +1,57 @@
+[
+  {
+    "id": 1,
+    "title": "Kadına Yönelik Şiddetle Mücadele Günü",
+    "excerpt": "Her yıl 25 Kasım Kadına Yönelik Şiddetle Mücadele Günü olarak kutlanmaktadır. Bu gün, kadına yönelik şiddetin her türlüsüne karşı farkındalık oluşturmak için önemli bir fırsattır.",
+    "date": "25 Kasım 2024",
+    "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=600&fit=crop",
+    "link": "#"
+  },
+  {
+    "id": 2,
+    "title": "İstanbul Sözleşmesi ve Kadın Hakları",
+    "excerpt": "İstanbul Sözleşmesi, kadına yönelik şiddetin önlenmesi ve bu tür şiddetle mücadele edilmesi konusunda uluslararası bir anlaşmadır. Sözleşme, kadınların şiddetten korunması için önemli bir araçtır.",
+    "date": "15 Ekim 2024",
+    "image": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=800&h=600&fit=crop",
+    "link": "#"
+  },
+  {
+    "id": 3,
+    "title": "ŞÖNİM Merkezleri Kadınlara Nasıl Destek Oluyor?",
+    "excerpt": "Şiddet Önleme ve İzleme Merkezleri (ŞÖNİM), şiddet mağduru kadınlara psikolojik, sosyal ve hukuki destek sağlamaktadır. 81 ilde hizmet vermektedir.",
+    "date": "10 Ekim 2024",
+    "image": "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=800&h=600&fit=crop",
+    "link": "#"
+  },
+  {
+    "id": 4,
+    "title": "Ekonomik Şiddet: Görünmeyen Tehlike",
+    "excerpt": "Ekonomik şiddet, kadınların ekonomik kaynaklara erişiminin engellenmesi veya kontrol edilmesi yoluyla uygulanan bir şiddet türüdür. Bu şiddet türü genellikle göz ardı edilmektedir.",
+    "date": "28 Eylül 2024",
+    "image": "https://images.unsplash.com/photo-1554224311-beee460201e1?w=800&h=600&fit=crop",
+    "link": "#"
+  },
+  {
+    "id": 5,
+    "title": "Kadın Sığınma Evleri: Güvenli Bir Liman",
+    "excerpt": "Kadın sığınma evleri, şiddet mağduru kadınlar ve çocukları için güvenli barınma imkanı sunar. Bu merkezlerde psikolojik destek ve yasal danışmanlık hizmetleri de verilir.",
+    "date": "20 Eylül 2024",
+    "image": "https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=800&h=600&fit=crop",
+    "link": "#"
+  },
+  {
+    "id": 6,
+    "title": "Dijital Şiddet Artıyor: Kadınlar Risk Altında",
+    "excerpt": "Sosyal medya ve dijital platformlardaki taciz, tehdit ve siber zorbalık vakalarında artış görülmektedir. Kadınlar bu tür şiddetin en çok hedef aldığı kesim.",
+    "date": "5 Eylül 2024",
+    "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop",
+    "link": "#"
+  }
+]
+
+
+
+
+
+
+
