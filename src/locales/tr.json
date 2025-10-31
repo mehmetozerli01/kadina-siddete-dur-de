@@ -256,6 +256,20 @@
     "exportNote": "Bu dosyayı güvenli bir yerde saklayın. Sadece size ait bir cihaza kaydedin.",
     "confirmCall": "{phone} numarasını aramak istediğinizden emin misiniz?",
     "exportTitle": "KİŞİSEL GÜVENLİK PLANI"
+  },
+  "theme": {
+    "lightMode": "Açık Mod",
+    "darkMode": "Koyu Mod",
+    "switchToLight": "Açık moda geç",
+    "switchToDark": "Koyu moda geç"
+  },
+  "fontSize": {
+    "increase": "Font boyutunu artır",
+    "decrease": "Font boyutunu azalt"
+  },
+  "backToTop": {
+    "ariaLabel": "Başa dön",
+    "title": "Sayfanın başına git"
   }
 }
 

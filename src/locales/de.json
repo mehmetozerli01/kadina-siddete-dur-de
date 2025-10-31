@@ -190,6 +190,20 @@
     "sheltersText": "Es gibt Zufluchtsstätten, die sichere Unterkünfte für von Gewalt betroffene Frauen und deren Kinder bieten. Während des Aufenthalts in diesen Häusern werden Unterkunft, Verpflegung, psychologische Unterstützung und Bildungsdienste für Kinder bereitgestellt. Sie können 183 anrufen, um sich zu bewerben.",
     "callEmergency": "Sofort im Notfall anrufen",
     "callEmergencyText": "Wenn dein Leben in Gefahr ist, rufe 155 an; wenn du Unterstützung brauchst, rufe 183 an."
+  },
+  "theme": {
+    "lightMode": "Hellmodus",
+    "darkMode": "Dunkelmodus",
+    "switchToLight": "Zu Helligkeitsmodus wechseln",
+    "switchToDark": "Zu Dunkelmodus wechseln"
+  },
+  "fontSize": {
+    "increase": "Schriftgröße erhöhen",
+    "decrease": "Schriftgröße verringern"
+  },
+  "backToTop": {
+    "ariaLabel": "Nach oben",
+    "title": "Zum Seitenanfang gehen"
   }
 }
 

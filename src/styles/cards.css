@@ -1,7 +1,7 @@
 /* Card Styles */
 
 .card {
-  background-color: var(--white);
+  background-color: var(--bg-card, #ffffff);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   overflow: hidden;
@@ -9,6 +9,11 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.dark-mode .card {
+  background-color: var(--bg-card, #1F2937);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .card:hover {

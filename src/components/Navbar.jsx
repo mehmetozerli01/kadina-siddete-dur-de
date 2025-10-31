@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
+import ThemeToggle from './ThemeToggle';
 import '../styles/navbar.css';
 
 const Navbar = () => {
@@ -119,7 +120,7 @@ const Navbar = () => {
                   }
                 }}
               >
-                🛠️ {t('Menü')}
+                🛠️ {t('navbar.tools')}
                 <span className={`dropdown-arrow ${isDropdownOpen ? 'open' : ''}`}>▼</span>
               </button>
               <ul 
@@ -211,6 +212,7 @@ const Navbar = () => {
           
           {/* Dil Değiştirici - Menü Dışında */}
           <div className="navbar-language-wrapper">
+            <ThemeToggle />
             <LanguageSwitcher />
           </div>
           

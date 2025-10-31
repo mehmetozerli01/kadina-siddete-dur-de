@@ -190,6 +190,20 @@
     "sheltersText": "Il existe des refuges qui offrent un logement sûr aux femmes victimes de violence et à leurs enfants. Pendant le séjour dans ces maisons, le logement, la nutrition, le soutien psychologique et les services éducatifs pour les enfants sont fournis. Tu peux appeler le 183 pour postuler.",
     "callEmergency": "Appeler immédiatement en cas d'urgence",
     "callEmergencyText": "Si ta vie est en danger, appelle le 155 ; si tu as besoin de soutien, appelle le 183."
+  },
+  "theme": {
+    "lightMode": "Mode Clair",
+    "darkMode": "Mode Sombre",
+    "switchToLight": "Passer en mode clair",
+    "switchToDark": "Passer en mode sombre"
+  },
+  "fontSize": {
+    "increase": "Augmenter la taille de la police",
+    "decrease": "Diminuer la taille de la police"
+  },
+  "backToTop": {
+    "ariaLabel": "Retour en haut",
+    "title": "Aller en haut de la page"
   }
 }
 

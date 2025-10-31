@@ -190,6 +190,20 @@
     "sheltersText": "There are shelters that provide safe accommodation for women victims of violence and their children. During the stay in these homes, accommodation, nutrition, psychological support and educational services for children are provided. You can call 183 to apply.",
     "callEmergency": "Call Immediately in Emergency",
     "callEmergencyText": "If your life is in danger, call 155; if you need support, call 183."
+  },
+  "theme": {
+    "lightMode": "Light Mode",
+    "darkMode": "Dark Mode",
+    "switchToLight": "Switch to light mode",
+    "switchToDark": "Switch to dark mode"
+  },
+  "fontSize": {
+    "increase": "Increase font size",
+    "decrease": "Decrease font size"
+  },
+  "backToTop": {
+    "ariaLabel": "Back to top",
+    "title": "Go to top of page"
   }
 }
 

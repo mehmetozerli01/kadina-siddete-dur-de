@@ -10,6 +10,11 @@
   width: 100%;
 }
 
+.dark-mode .navbar {
+  background-color: var(--bg-card, #1F2937);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
 .navbar-container {
   max-width: 1400px;
   margin: 0 auto;

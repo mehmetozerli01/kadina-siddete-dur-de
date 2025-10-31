@@ -8,6 +8,7 @@ import LocationFinder from '../components/LocationFinder';
 import VoiceEmergency from '../components/VoiceEmergency';
 import RiskAnalyzer from '../components/RiskAnalyzer';
 import QuickExit from '../components/QuickExit';
+import BackToTop from '../components/BackToTop';
 
 const MainLayout = () => {
   const navigate = useNavigate();
@@ -47,6 +48,9 @@ const MainLayout = () => {
       
       {/* Security Features */}
       <QuickExit />
+      
+      {/* UI Enhancements */}
+      <BackToTop />
     </div>
   );
 };
