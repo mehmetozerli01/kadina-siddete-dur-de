@@ -13,6 +13,9 @@ const Scenarios = lazy(() => import('../pages/Scenarios'));
 const ViolenceMap = lazy(() => import('../pages/ViolenceMap'));
 const Library = lazy(() => import('../pages/Library'));
 const Help = lazy(() => import('../pages/Help'));
+const SafeJournal = lazy(() => import('../pages/SafeJournal'));
+const SocialShare = lazy(() => import('../pages/SocialShare'));
+const SafetyPlan = lazy(() => import('../pages/SafetyPlan'));
 
 // Loading component
 const LoadingSpinner = () => (
@@ -53,6 +56,9 @@ const AppRouter = () => {
             <Route path="violence-map" element={<ViolenceMap />} />
             <Route path="library" element={<Library />} />
             <Route path="help" element={<Help />} />
+            <Route path="güvenli-kayıt" element={<SafeJournal />} />
+            <Route path="sosyal-paylaşım" element={<SocialShare />} />
+            <Route path="güvenlik-planı" element={<SafetyPlan />} />
           </Route>
         </Routes>
       </Suspense>

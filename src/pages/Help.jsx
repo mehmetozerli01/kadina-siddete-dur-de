@@ -1,50 +1,53 @@
 import React from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 import '../styles/global.css';
 import '../styles/cards.css';
 
 const Help = () => {
+  const { t } = useLanguage();
+  
   const helplines = [
     {
       icon: '📞',
-      title: 'ALO 183 - ŞÖNİM',
-      description: 'Şiddet Önleme ve İzleme Merkezi. Kadına yönelik şiddet vakalarında 7/24 destek hattı.',
+      title: t('help.sonim'),
+      description: t('help.sonimDesc'),
       phone: '183',
-      hours: '7 Gün 24 Saat',
+      hours: t('help.hours24'),
     },
     {
       icon: '🚔',
-      title: 'Polis İmdat',
-      description: 'Acil durumlarda kolluk kuvvetlerine ulaşmak için arayınız.',
+      title: t('help.police'),
+      description: t('help.policeDesc'),
       phone: '155',
-      hours: '7 Gün 24 Saat',
+      hours: t('help.hours24'),
     },
     {
       icon: '🏥',
-      title: 'Sağlık Acil',
-      description: 'Acil sağlık durumlarında ambulans ve sağlık hizmetleri.',
+      title: t('help.health'),
+      description: t('help.healthDesc'),
       phone: '112',
-      hours: '7 Gün 24 Saat',
+      hours: t('help.hours24'),
     },
     {
       icon: '👮',
-      title: 'Jandarma İmdat',
-      description: 'Kırsal bölgelerde acil durumlarda jandarma yardımı.',
+      title: t('help.gendarmerie'),
+      description: t('help.gendarmerieDesc'),
       phone: '156',
-      hours: '7 Gün 24 Saat',
+      hours: t('help.hours24'),
     },
     {
       icon: '⚖️',
-      title: 'Adli Yardım',
-      description: 'Hukuki danışmanlık ve adli yardım hizmetleri.',
+      title: t('help.legalAid'),
+      description: t('help.legalAidDesc'),
       phone: '155',
-      hours: 'Mesai Saatleri',
+      hours: t('help.businessHours'),
     },
     {
       icon: '💬',
-      title: 'ALO 183 Psikolojik Destek',
-      description: 'Profesyonel psikologlar eşliğinde psikolojik destek ve danışmanlık.',
+      title: t('help.psychologicalSupport'),
+      description: t('help.psychologicalSupportDesc'),
       phone: '183',
-      hours: '7 Gün 24 Saat',
+      hours: t('help.hours24'),
     },
   ];
 
@@ -64,7 +67,7 @@ const Help = () => {
             marginBottom: '1rem',
             textShadow: '2px 2px 4px rgba(0,0,0,0.2)'
           }}>
-            🆘 Acil Yardım Hatları
+            🆘 {t('help.title')}
           </h1>
           <p style={{ 
             fontSize: '1.3rem', 
@@ -72,7 +75,7 @@ const Help = () => {
             maxWidth: '700px',
             margin: '0 auto'
           }}>
-            Sen yalnız değilsin. Yardım almak için aşağıdaki numaraları arayabilirsin.
+            {t('help.subtitle')}
           </p>
         </div>
       </section>
@@ -103,7 +106,7 @@ const Help = () => {
       {/* Important Info Section */}
       <section className="section bg-light">
         <div className="container">
-          <h2 className="section-title">Önemli Bilgiler</h2>
+          <h2 className="section-title">{t('help.importantInfo')}</h2>
           <div style={{ maxWidth: '900px', margin: '0 auto' }}>
             <div style={{
               padding: '2rem',
@@ -113,12 +116,10 @@ const Help = () => {
               marginBottom: '1.5rem'
             }}>
               <h3 style={{ color: 'var(--primary-purple)', marginBottom: '1rem' }}>
-                🔒 Gizlilik Garantisi
+                🔒 {t('help.privacyGuaranteeTitle')}
               </h3>
               <p style={{ lineHeight: '1.8' }}>
-                Tüm yardım hatları tamamen gizlidir. Kimlik bilgileriniz ve 
-                paylaştığınız bilgiler kesinlikle gizli tutulur. İzniniz olmadan 
-                hiçbir bilgi üçüncü şahıslarla paylaşılmaz.
+                {t('help.privacyGuaranteeText')}
               </p>
             </div>
 
@@ -130,12 +131,10 @@ const Help = () => {
               marginBottom: '1.5rem'
             }}>
               <h3 style={{ color: 'var(--primary-purple)', marginBottom: '1rem' }}>
-                💰 Ücretsiz Hizmet
+                💰 {t('help.freeService')}
               </h3>
               <p style={{ lineHeight: '1.8' }}>
-                Tüm yardım hatları tamamen ücretsizdir. Cep telefonundan veya 
-                ankesörlü telefondan aradığınızda herhangi bir ücret ödemeniz 
-                gerekmez.
+                {t('help.freeServiceText')}
               </p>
             </div>
 
@@ -147,12 +146,10 @@ const Help = () => {
               marginBottom: '1.5rem'
             }}>
               <h3 style={{ color: 'var(--primary-purple)', marginBottom: '1rem' }}>
-                🏢 ŞÖNİM Merkezleri
+                🏢 {t('help.sonimCentersTitle')}
               </h3>
               <p style={{ lineHeight: '1.8' }}>
-                Şiddet Önleme ve İzleme Merkezleri (ŞÖNİM), Türkiye'nin 81 ilinde 
-                hizmet vermektedir. Bu merkezlerde psikolojik destek, sosyal hizmet 
-                desteği ve hukuki danışmanlık hizmetleri ücretsiz olarak sunulmaktadır.
+                {t('help.sonimCentersText')}
               </p>
             </div>
 
@@ -163,13 +160,10 @@ const Help = () => {
               boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
             }}>
               <h3 style={{ color: 'var(--primary-purple)', marginBottom: '1rem' }}>
-                🏠 Kadın Sığınma Evleri
+                🏠 {t('help.shelters')}
               </h3>
               <p style={{ lineHeight: '1.8' }}>
-                Şiddet mağduru kadınlar ve çocukları için güvenli barınma imkanı 
-                sunan sığınma evleri mevcuttur. Bu evlerde kalma süresi boyunca 
-                barınma, beslenme, psikolojik destek ve çocuklar için eğitim 
-                hizmetleri sağlanır. Başvuru için 183'ü arayabilirsiniz.
+                {t('help.sheltersText')}
               </p>
             </div>
           </div>
@@ -184,10 +178,10 @@ const Help = () => {
       }}>
         <div className="container">
           <h2 style={{ color: 'white', marginBottom: '1rem' }}>
-            Acil Durumda Hemen Ara
+            {t('help.callEmergency')}
           </h2>
           <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.95)', marginBottom: '2rem' }}>
-            Hayatın tehlikede ise 155'i, destek almak istiyorsan 183'ü ara.
+            {t('help.callEmergencyText')}
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a 
@@ -195,7 +189,7 @@ const Help = () => {
               className="btn btn-emergency"
               style={{ fontSize: '1.3rem', padding: '1rem 2rem' }}
             >
-              📞 155 - POLİS
+              📞 155 - {t('help.police').toUpperCase()}
             </a>
             <a 
               href="tel:183" 
@@ -217,6 +211,7 @@ const Help = () => {
 };
 
 export default Help;
+
 
 
 

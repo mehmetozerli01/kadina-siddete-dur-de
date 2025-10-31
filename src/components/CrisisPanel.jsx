@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useLanguage } from '../contexts/LanguageContext';
 import '../styles/crisis-panel.css';
 
 const CrisisPanel = () => {
+  const navigate = useNavigate();
+  const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const [emergencyMode, setEmergencyMode] = useState(false);
   const [countdown, setCountdown] = useState(0);
@@ -51,7 +55,7 @@ const CrisisPanel = () => {
   };
 
   const callEmergency = (number, label) => {
-    if (confirm(`${label} numarasını aramak istediğinizden emin misiniz?`)) {
+    if (window.confirm(t('crisisPanel.confirmCall', { label }))) {
       window.open(`tel:${number}`, '_self');
     }
   };
@@ -66,55 +70,56 @@ const CrisisPanel = () => {
     }
   };
 
-  const quickActions = [
+  // Quick actions - translations will be applied in render
+  const quickActionsConfig = [
     {
       id: 'police',
       icon: '🚔',
-      label: 'Polis',
+      labelKey: 'crisisPanel.police',
       number: '155',
       color: '#DC2626',
-      description: 'Acil durumlar için'
+      descriptionKey: 'crisisPanel.policeDescription'
     },
     {
       id: 'sönim',
       icon: '💜',
-      label: 'ŞÖNİM',
+      labelKey: 'crisisPanel.sonim',
       number: '183',
       color: '#8B5CF6',
-      description: 'Kadına şiddet desteği'
+      descriptionKey: 'crisisPanel.sonimDescription'
     },
     {
       id: 'health',
       icon: '🏥',
-      label: 'Sağlık',
+      labelKey: 'crisisPanel.health',
       number: '112',
       color: '#059669',
-      description: 'Acil sağlık hizmetleri'
+      descriptionKey: 'crisisPanel.healthDescription'
     },
     {
       id: 'jandarma',
       icon: '👮',
-      label: 'Jandarma',
+      labelKey: 'crisisPanel.gendarmerie',
       number: '156',
       color: '#7C3AED',
-      description: 'Kırsal bölgeler için'
+      descriptionKey: 'crisisPanel.gendarmerieDescription'
     }
   ];
 
-  const safetyTips = [
-    'Güvenli bir yere git',
-    'Telefonunu sessize al',
-    'Yakınlarını bilgilendir',
-    'Kanıtları sakla',
-    'Güvenli kod kelimesi kullan'
-  ];
+  const quickActions = quickActionsConfig.map(action => ({
+    ...action,
+    label: t(action.labelKey),
+    description: t(action.descriptionKey)
+  }));
+
+  // Safety tips removed - can be added to translation files if needed
 
   return (
     <>
       {/* Crisis Panel Toggle Button */}
       <div className="crisis-toggle" onClick={togglePanel}>
         <span className="crisis-icon">🆘</span>
-        <span className="crisis-text">Kriz Paneli</span>
+        <span className="crisis-text">{t('crisisPanel.title')}</span>
       </div>
 
       {/* Crisis Panel Modal */}
@@ -122,11 +127,11 @@ const CrisisPanel = () => {
         <div className="crisis-modal-overlay" onClick={() => setIsVisible(false)}>
           <div className="crisis-panel" onClick={(e) => e.stopPropagation()}>
             <div className="crisis-header">
-              <h2>🆘 Kriz Müdahale Paneli</h2>
+              <h2>🆘 {t('crisisPanel.title')}</h2>
               <button 
                 className="close-crisis" 
                 onClick={() => setIsVisible(false)}
-                aria-label="Paneli kapat"
+                aria-label={t('common.close')}
               >
                 ✕
               </button>
@@ -136,8 +141,8 @@ const CrisisPanel = () => {
             {emergencyMode && (
               <div className="emergency-mode">
                 <div className="emergency-alert">
-                  <h3>🚨 ACİL DURUM MODU AKTİF</h3>
-                  <p>10 saniye içinde ŞÖNİM (183) aranacak...</p>
+                  <h3>🚨 {t('crisisPanel.emergencyActive')}</h3>
+                  <p>{t('crisisPanel.emergencyCountdown')}</p>
                   <div className="countdown-display">
                     {countdown}
                   </div>
@@ -146,13 +151,13 @@ const CrisisPanel = () => {
                       onClick={cancelEmergency}
                       className="cancel-emergency"
                     >
-                      İptal Et
+                      {t('crisisPanel.cancelEmergency')}
                     </button>
                     <button 
                       onClick={() => window.open('tel:183', '_self')}
                       className="call-now"
                     >
-                      Şimdi Ara
+                      {t('crisisPanel.callNow')}
                     </button>
                   </div>
                 </div>
@@ -161,7 +166,7 @@ const CrisisPanel = () => {
 
             {/* Quick Actions */}
             <div className="quick-actions-section">
-              <h3>Hızlı Eylemler</h3>
+              <h3>{t('crisisPanel.quickActions')}</h3>
               <div className="quick-actions-grid">
                 {quickActions.map((action) => (
                   <button
@@ -186,47 +191,59 @@ const CrisisPanel = () => {
                 onClick={activateEmergencyMode}
                 disabled={emergencyMode}
               >
-                🚨 ACİL DURUM MODUNU AKTİF ET
+                🚨 {t('crisisPanel.emergencyMode')}
               </button>
               <p className="emergency-warning">
-                Bu buton 10 saniye sonra otomatik olarak ŞÖNİM'i arayacaktır.
+                {t('crisisPanel.emergencyWarning')}
               </p>
             </div>
 
             {/* Location Sharing */}
             <div className="location-section">
-              <h3>📍 Konum Paylaşımı</h3>
+              <h3>📍 {t('crisisPanel.locationSharing')}</h3>
               <button 
                 className="location-btn"
                 onClick={sendLocation}
                 disabled={!location}
               >
-                {location ? 'Konumumu Paylaş' : 'Konum Alınamadı'}
+                {location ? t('crisisPanel.shareLocation') : t('crisisPanel.locationNotAvailable')}
               </button>
               {location && (
                 <p className="location-info">
-                  Konum: {location.lat.toFixed(4)}, {location.lng.toFixed(4)}
+                  {t('crisisPanel.locationSharing')}: {location.lat.toFixed(4)}, {location.lng.toFixed(4)}
                 </p>
               )}
             </div>
 
+            {/* Quick Log Button */}
+            <div className="quick-log-section">
+              <h3>📝 {t('crisisPanel.quickLog')}</h3>
+              <button 
+                className="quick-log-btn"
+                onClick={() => {
+                  setIsVisible(false);
+                  navigate('/güvenli-kayıt');
+                }}
+              >
+                {t('crisisPanel.addViolenceLog')}
+              </button>
+              <p className="quick-log-info">
+                {t('crisisPanel.quickLogInfo')}
+              </p>
+            </div>
+
             {/* Safety Tips */}
             <div className="safety-tips-section">
-              <h3>🛡️ Güvenlik İpuçları</h3>
+              <h3>🛡️ {t('crisisPanel.safetyTips')}</h3>
               <ul className="safety-tips-list">
-                {safetyTips.map((tip, index) => (
-                  <li key={index} className="safety-tip">
-                    {tip}
-                  </li>
-                ))}
+                <li className="safety-tip">{t('crisisPanel.safetyTips')}</li>
               </ul>
             </div>
 
             {/* Privacy Notice */}
             <div className="privacy-notice">
               <p>
-                🔒 <strong>Gizlilik:</strong> Bu panel tamamen gizlidir. 
-                Hiçbir bilgi kaydedilmez ve tarayıcı geçmişinde görünmez.
+                🔒 <strong>{t('crisisPanel.privacy')}:</strong> {t('crisisPanel.privacyText')}
               </p>
             </div>
           </div>

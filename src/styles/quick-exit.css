@@ -1,0 +1,61 @@
+/* Quick Exit Button - Güvenlik için Hızlı Çıkış */
+.quick-exit-btn {
+  position: fixed !important;
+  top: 10px !important;
+  right: 10px !important;
+  z-index: 10001 !important; /* En üstte */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #DC2626 0%, #991B1B 100%);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(220, 38, 38, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.85;
+}
+
+.quick-exit-btn:hover {
+  transform: scale(1.15);
+  opacity: 1;
+  box-shadow: 0 6px 30px rgba(220, 38, 38, 0.7);
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+}
+
+.quick-exit-btn:active {
+  transform: scale(0.9);
+}
+
+.quick-exit-icon {
+  font-size: 1.5rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Mobil için daha küçük */
+@media (max-width: 768px) {
+  .quick-exit-btn {
+    width: 45px;
+    height: 45px;
+    top: 5px;
+    right: 5px;
+  }
+  
+  .quick-exit-icon {
+    font-size: 1.3rem;
+  }
+}
+
+/* Gizli mod için - daha az görünür */
+@media (prefers-color-scheme: dark) {
+  .quick-exit-btn {
+    opacity: 0.7;
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .quick-exit-btn:hover {
+    opacity: 1;
+  }
+}

@@ -1,8 +1,8 @@
 /* Risk Toggle Button */
 .risk-toggle-btn {
   position: fixed !important;
-  bottom: 20px !important; /* En altta, Crisis Panel'in yanında */
-  left: 20px !important;
+  bottom: 87px !important; /* En altta, Crisis Panel'in yanında */
+  left: 167px !important;
   z-index: 9999 !important; /* En yüksek z-index */
   width: 60px;
   height: 60px;
