@@ -1,5 +1,6 @@
 import React from 'react';
 import ViolenceMap from '../components/ViolenceMap';
+import RegionViolenceLayer from '../components/map/RegionViolenceLayer';
 import '../styles/global.css';
 
 const ViolenceMapPage = () => {
@@ -39,6 +40,13 @@ const ViolenceMapPage = () => {
       <section className="section">
         <div className="container">
           <ViolenceMap />
+        </div>
+      </section>
+
+      {/* TÜİK Regional Data */}
+      <section className="section" style={{ background: 'linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%)' }}>
+        <div className="container">
+          <RegionViolenceLayer />
         </div>
       </section>
 

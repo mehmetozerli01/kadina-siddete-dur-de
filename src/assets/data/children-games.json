@@ -1,0 +1,91 @@
+[
+  {
+    "id": 1,
+    "title": "Güvenli Yerler Oyunu",
+    "ageGroup": "5-8",
+    "type": "interactive",
+    "description": "Güvenli ve güvensiz yerleri ayırt etmeyi öğren.",
+    "instructions": "Kartlardaki yerlerin güvenli mi yoksa güvensiz mi olduğunu seç.",
+    "icon": "🏠",
+    "category": "güvenlik",
+    "questions": [
+      {
+        "question": "Evde yalnızken kapı çaldığında ne yaparsın?",
+        "options": [
+          { "text": "Hemen açarım", "correct": false },
+          { "text": "Önce kim olduğunu sorarım", "correct": true },
+          { "text": "Hiç bakmam", "correct": false }
+        ]
+      },
+      {
+        "question": "Yabancı biri sana şeker verirse ne yaparsın?",
+        "options": [
+          { "text": "Alırım", "correct": false },
+          { "text": "Hayır derim ve bir yetişkine söylerim", "correct": true },
+          { "text": "Sessizce giderim", "correct": false }
+        ]
+      },
+      {
+        "question": "Kendini kötü hissettiğinde ne yaparsın?",
+        "options": [
+          { "text": "Hiç kimseye söylemem", "correct": false },
+          { "text": "Güvendiğim bir yetişkine söylerim", "correct": true },
+          { "text": "Sadece ağlarım", "correct": false }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Duyguları Tanı",
+    "ageGroup": "4-7",
+    "type": "educational",
+    "description": "Farklı duyguları tanımayı ve ifade etmeyi öğren.",
+    "instructions": "Yüz ifadelerine bakarak hangi duygu olduğunu tahmin et.",
+    "icon": "😊",
+    "category": "duygular",
+    "emotions": [
+      { "name": "Mutlu", "emoji": "😊", "color": "#FFD700" },
+      { "name": "Üzgün", "emoji": "😢", "color": "#4169E1" },
+      { "name": "Korkmuş", "emoji": "😨", "color": "#9370DB" },
+      { "name": "Kızgın", "emoji": "😠", "color": "#FF4500" },
+      { "name": "Şaşkın", "emoji": "😲", "color": "#FFA500" },
+      { "name": "Sakin", "emoji": "😌", "color": "#90EE90" }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Güvenli Kişileri Bul",
+    "ageGroup": "6-9",
+    "type": "matching",
+    "description": "Güvenebileceğin kişileri öğren.",
+    "instructions": "Hangi kişilere güvenebileceğini seç.",
+    "icon": "👥",
+    "category": "güvenlik",
+    "people": [
+      { "name": "Öğretmen", "safe": true, "emoji": "👩‍🏫" },
+      { "name": "Anne/Baba", "safe": true, "emoji": "👨‍👩‍👧" },
+      { "name": "Polis", "safe": true, "emoji": "👮" },
+      { "name": "Doktor", "safe": true, "emoji": "👩‍⚕️" },
+      { "name": "Yabancı", "safe": false, "emoji": "🚫" },
+      { "name": "Tanımadığın kişi", "safe": false, "emoji": "❌" }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Boyama Kitabı",
+    "ageGroup": "3-8",
+    "type": "art",
+    "description": "Güvenlik ve duygular temalı boyama sayfaları.",
+    "instructions": "Renkleri seç ve boyama yap!",
+    "icon": "🎨",
+    "category": "eğlence",
+    "pages": [
+      { "id": 1, "title": "Güvenli Ev", "image": "safe-house" },
+      { "id": 2, "title": "Mutlu Aile", "image": "happy-family" },
+      { "id": 3, "title": "Cesur Çocuk", "image": "brave-child" },
+      { "id": 4, "title": "Güvenli Okul", "image": "safe-school" }
+    ]
+  }
+]
+

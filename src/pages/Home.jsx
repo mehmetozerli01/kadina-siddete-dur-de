@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import StatCard from '../components/StatCard';
+import TuikStatsCards from '../components/TuikStatsCards';
 import '../styles/home.css';
 import '../styles/global.css';
 
@@ -130,6 +131,11 @@ const Home = () => {
             </Link>
           </div>
         </div>
+      </section>
+
+      {/* TÜİK Stats Section */}
+      <section className="section" style={{ background: 'linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%)', padding: '4rem 0' }}>
+        <TuikStatsCards />
       </section>
 
       {/* New Features Section */}

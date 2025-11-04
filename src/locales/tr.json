@@ -29,7 +29,8 @@
     "help": "Acil Yardım",
     "socialShare": "Sosyal Paylaşım",
     "safetyPlan": "Güvenlik Planı",
-    "tools": "Araçlar"
+    "tools": "Araçlar",
+    "children": "Çocuklar"
   },
   "home": {
     "title": "Kadına Şiddete Dur De",
@@ -270,6 +271,46 @@
   "backToTop": {
     "ariaLabel": "Başa dön",
     "title": "Sayfanın başına git"
+  },
+  "children": {
+    "title": "Çocuklar İçin Güvenli Alan",
+    "subtitle": "Burada hikayeler okuyabilir, oyunlar oynayabilir ve kendini güvende tutmayı öğrenebilirsin!",
+    "stories": "Hikayeler",
+    "games": "Oyunlar",
+    "safety": "Güvenlik",
+    "coloring": "Boyama",
+    "emergencyHelp": "Acil Yardım",
+    "forParents": "Ebeveynler İçin",
+    "parentGuide": "Ebeveyn Rehberi"
+  },
+  "tuik": {
+    "title": "Gerçekler",
+    "subtitle": "TÜİK Araştırma Verileri",
+    "source": "Kaynak",
+    "year": "Yıl",
+    "sampleSize": "Örneklem",
+    "lifetime": "Yaşam Boyu",
+    "last12months": "Son 12 Ay",
+    "byAge": "Yaş Gruplarına Göre",
+    "byRegion": "Bölgelere Göre",
+    "byEducation": "Eğitim Seviyesine Göre",
+    "byMaritalStatus": "Medeni Duruma Göre",
+    "physical": "Fiziksel Şiddet",
+    "psychological": "Psikolojik Şiddet",
+    "economic": "Ekonomik Şiddet",
+    "digital": "Dijital Şiddet",
+    "stalking": "Israrlı Takip",
+    "sexual": "Cinsel Şiddet",
+    "sharing": "Paylaşım Durumu",
+    "reasons": "Şiddet Nedenleri",
+    "highestRegion": "En Yüksek Bölge",
+    "lowestRegion": "En Düşük Bölge",
+    "notShared": "Kimseye Anlatmıyor",
+    "sharedWithFamily": "Aile ile Paylaşıyor",
+    "sharedWithFriend": "Arkadaş ile Paylaşıyor",
+    "angerControl": "Öfke Kontrolü",
+    "upbringing": "Yetiştirilme Tarzı",
+    "financial": "Maddi Sıkıntı"
   }
 }
 

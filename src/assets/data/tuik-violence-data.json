@@ -1,0 +1,274 @@
+{
+  "metadata": {
+    "year": 2024,
+    "source": "TÜİK",
+    "sourceUrl": "https://data.tuik.gov.tr/",
+    "sampleSize": 18275,
+    "ageRange": "15-59",
+    "surveyPeriod": "18 Kasım 2024 - 31 Ocak 2025"
+  },
+  "lifetime": {
+    "physical": 12.8,
+    "psychological": 28.2,
+    "economic": 18.3,
+    "sexual": null,
+    "digital": null,
+    "stalking": null
+  },
+  "last12months": {
+    "physical": 2.6,
+    "psychological": 11.6,
+    "economic": 3.2,
+    "digital": 3.7,
+    "stalking": 3.1,
+    "sexual": 0.9
+  },
+  "byAge": {
+    "lifetime": {
+      "15-24": {
+        "physical": null,
+        "psychological": null,
+        "economic": null
+      },
+      "25-34": {
+        "physical": 11.9,
+        "psychological": null,
+        "economic": null
+      },
+      "35-44": {
+        "physical": 14.7,
+        "psychological": null,
+        "economic": null
+      },
+      "45-59": {
+        "physical": 14.3,
+        "psychological": null,
+        "economic": null
+      }
+    },
+    "last12months": {
+      "15-24": {
+        "physical": null,
+        "psychological": 15.2,
+        "digital": 7.3,
+        "economic": null
+      },
+      "25-34": {
+        "physical": null,
+        "psychological": null,
+        "digital": 4.1,
+        "economic": null
+      },
+      "35-44": {
+        "physical": null,
+        "psychological": null,
+        "digital": 3.2,
+        "economic": null
+      },
+      "45-59": {
+        "physical": null,
+        "psychological": 9.4,
+        "digital": null,
+        "economic": null
+      }
+    }
+  },
+  "byRegion": {
+    "Kuzeydoğu Anadolu": {
+      "physical": 25.9,
+      "name": "Kuzeydoğu Anadolu",
+      "regionCode": "TR9"
+    },
+    "Ortadoğu Anadolu": {
+      "physical": 8.8,
+      "name": "Ortadoğu Anadolu",
+      "regionCode": "TR7"
+    },
+    "İstanbul": {
+      "physical": null,
+      "name": "İstanbul",
+      "regionCode": "TR1"
+    },
+    "Batı Marmara": {
+      "physical": null,
+      "name": "Batı Marmara",
+      "regionCode": "TR2"
+    },
+    "Ege": {
+      "physical": null,
+      "name": "Ege",
+      "regionCode": "TR3"
+    },
+    "Doğu Marmara": {
+      "physical": null,
+      "name": "Doğu Marmara",
+      "regionCode": "TR4"
+    },
+    "Batı Anadolu": {
+      "physical": null,
+      "name": "Batı Anadolu",
+      "regionCode": "TR5"
+    },
+    "Akdeniz": {
+      "physical": null,
+      "name": "Akdeniz",
+      "regionCode": "TR6"
+    },
+    "Batı Karadeniz": {
+      "physical": null,
+      "name": "Batı Karadeniz",
+      "regionCode": "TR8"
+    },
+    "Doğu Karadeniz": {
+      "physical": null,
+      "name": "Doğu Karadeniz",
+      "regionCode": "TRA"
+    },
+    "Güneydoğu Anadolu": {
+      "physical": null,
+      "name": "Güneydoğu Anadolu",
+      "regionCode": "TRC"
+    }
+  },
+  "byEducation": {
+    "lifetime": {
+      "noEducation": {
+        "economic": 31.8
+      },
+      "primary": {
+        "economic": null
+      },
+      "secondary": {
+        "economic": null
+      },
+      "highSchool": {
+        "economic": null
+      },
+      "higherEducation": {
+        "economic": 8.9
+      }
+    },
+    "last12months": {
+      "noEducation": {
+        "economic": 5.3,
+        "psychological": null
+      },
+      "primary": {
+        "economic": 3.1
+      },
+      "secondary": {
+        "economic": 5.1
+      },
+      "highSchool": {
+        "economic": 3.2
+      },
+      "higherEducation": {
+        "economic": 1.5
+      }
+    }
+  },
+  "byMaritalStatus": {
+    "lifetime": {
+      "married": {
+        "physical": 11.6,
+        "psychological": 26.4,
+        "economic": 19.9
+      },
+      "divorced": {
+        "physical": 41.5,
+        "psychological": 62.1,
+        "economic": 42.5
+      },
+      "neverMarried": {
+        "physical": null,
+        "psychological": 25.7,
+        "digital": 14.2,
+        "stalking": 13.4
+      }
+    },
+    "last12months": {
+      "married": {
+        "physical": 2.1,
+        "psychological": 10.2,
+        "stalking": 1.8
+      },
+      "divorced": {
+        "physical": 5.2,
+        "stalking": 7.3
+      },
+      "neverMarried": {
+        "physical": 3.1,
+        "stalking": 5.7
+      }
+    }
+  },
+  "byEmployment": {
+    "lifetime": {
+      "private": {
+        "psychological": 34.0,
+        "economic": 21.1
+      },
+      "public": {
+        "psychological": 31.9,
+        "economic": 10.6
+      }
+    }
+  },
+  "byLocation": {
+    "last12months": {
+      "urban": {
+        "psychological": 12.2,
+        "digital": 4.2,
+        "stalking": 3.4
+      },
+      "mediumUrban": {
+        "psychological": 9.1,
+        "digital": 3.0,
+        "economic": 2.9
+      },
+      "rural": {
+        "psychological": 10.8,
+        "economic": 3.7,
+        "physical": 2.6
+      }
+    }
+  },
+  "reasons": {
+    "angerControl": 21.7,
+    "upbringing": 13.3,
+    "financial": 13.0,
+    "jealousy": null,
+    "alcohol": null,
+    "familyProblems": null,
+    "workProblems": null
+  },
+  "reasonsByAge": {
+    "angerControl": {
+      "25-34": 28.3
+    },
+    "financial": {
+      "45-59": 15.1
+    },
+    "jealousy": {
+      "15-24": 14.1
+    }
+  },
+  "sharing": {
+    "notShared": 47.7,
+    "sharedWithFamily": 31.8,
+    "sharedWithFriend": 10.2,
+    "sharedWithPartnerFamily": 4.4,
+    "sharedWithOther": null
+  },
+  "violencePerpetrators": {
+    "digital": {
+      "stranger": 62.3,
+      "partner": 15.7
+    },
+    "stalking": {
+      "stranger": 39.6,
+      "partner": 32.1
+    }
+  }
+}
+

@@ -1,0 +1,69 @@
+[
+  {
+    "id": 1,
+    "title": "Güçlü Prenses",
+    "ageGroup": "4-7",
+    "summary": "Güçlü Prenses'in kendisini ve arkadaşlarını nasıl koruduğunu anlatan hikaye.",
+    "content": "Bir zamanlar çok güçlü bir prenses varmış. O, kendisini ve arkadaşlarını her zaman korurmuş. Bir gün biri ona kötü davranmaya çalışınca, prenses 'Hayır!' demiş ve bir yetişkine söylemiş. Bu prensesi çok güçlü yapmış!",
+    "moral": "Kendimizi korumak önemlidir ve yetişkinlere güvenebiliriz.",
+    "icon": "👸",
+    "illustration": "princess",
+    "category": "güvenlik"
+  },
+  {
+    "id": 2,
+    "title": "Arkadaşım Ayşe",
+    "ageGroup": "5-8",
+    "summary": "Ayşe'nin güvenli yerler ve güvenli kişiler hakkında öğrendikleri.",
+    "content": "Ayşe, okulda ve evde güvenli yerler olduğunu öğrenmiş. Bir gün kendini kötü hissettiğinde, öğretmenine gitmiş ve ona anlatmış. Öğretmeni ona yardım etmiş ve Ayşe kendini güvende hissetmiş.",
+    "moral": "Güvenli kişiler ve güvenli yerler vardır. Yardım isteyebiliriz.",
+    "icon": "👧",
+    "illustration": "friendship",
+    "category": "güvenlik"
+  },
+  {
+    "id": 3,
+    "title": "Cesur Çocuk",
+    "ageGroup": "6-9",
+    "summary": "Bir çocuğun duygularını ifade etmeyi ve yardım istemeyi öğrenmesi.",
+    "content": "Can, bazen çok üzgün veya korkmuş hissediyormuş. Annesine bunları anlatmış ve birlikte çözümler bulmuşlar. Can, duygularını paylaşmanın ne kadar iyi geldiğini öğrenmiş.",
+    "moral": "Duygularımızı paylaşmak ve yardım istemek cesaret gerektirir.",
+    "icon": "🦸",
+    "illustration": "brave",
+    "category": "duygular"
+  },
+  {
+    "id": 4,
+    "title": "Güvenli Okul",
+    "ageGroup": "7-10",
+    "summary": "Okulda güvenli olmak ve sınırlar koymak hakkında.",
+    "content": "Zeynep, okulda arkadaşlarıyla oynarken bazen sınırlar koyması gerektiğini öğrenmiş. Birisi ona istemediği bir şey yaptığında, 'Dur, bu beni rahatsız ediyor' demiş. Öğretmeni ona bu konuda yardım etmiş.",
+    "moral": "Sınırlarımızı belirtebiliriz ve hayır diyebiliriz.",
+    "icon": "🏫",
+    "illustration": "school",
+    "category": "sınırlar"
+  },
+  {
+    "id": 5,
+    "title": "Mutlu Aile",
+    "ageGroup": "4-8",
+    "summary": "Aile içinde güvenli ve mutlu olmak.",
+    "content": "Elif'in ailesi çok sevgi doluymuş. Herkes birbirine saygı gösteriyor ve birbirini dinliyormuş. Elif, evinde kendini güvende ve mutlu hissediyormuş.",
+    "moral": "Herkes güvenli ve mutlu bir ailede yaşamayı hak eder.",
+    "icon": "👨‍👩‍👧",
+    "illustration": "family",
+    "category": "aile"
+  },
+  {
+    "id": 6,
+    "title": "Yardımsever Melek",
+    "ageGroup": "5-9",
+    "summary": "Başkalarına yardım etmek ve destek olmak.",
+    "content": "Merve, bir arkadaşının üzgün olduğunu görünce ona yardım etmek istemiş. Öğretmenine söylemiş ve birlikte arkadaşına destek olmuşlar. Merve, yardım etmenin ne kadar güzel olduğunu öğrenmiş.",
+    "moral": "Birbirimize yardım etmek ve destek olmak çok önemlidir.",
+    "icon": "😇",
+    "illustration": "help",
+    "category": "yardım"
+  }
+]
+

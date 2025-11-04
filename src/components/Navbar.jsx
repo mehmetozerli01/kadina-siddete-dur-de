@@ -29,6 +29,10 @@ const Navbar = () => {
     return dropdownPaths.some(path => location.pathname === path);
   };
 
+  const isChildrenActive = () => {
+    return location.pathname.startsWith('/çocuklar');
+  };
+
   return (
     <nav className="navbar" role="navigation" aria-label="Ana navigasyon">
       <div className="navbar-container">
@@ -101,6 +105,17 @@ const Navbar = () => {
                 aria-current={isActive('/stats') ? 'page' : undefined}
               >
                 {t('navbar.stats')}
+              </Link>
+            </li>
+            <li className="navbar-item" role="none">
+              <Link 
+                to="/çocuklar" 
+                className={`navbar-link ${isChildrenActive() ? 'active' : ''}`}
+                onClick={closeMenu}
+                role="menuitem"
+                aria-current={isChildrenActive() ? 'page' : undefined}
+              >
+                👶 {t('navbar.children')}
               </Link>
             </li>
             {/* Dropdown Menu */}

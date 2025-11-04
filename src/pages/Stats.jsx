@@ -1,8 +1,15 @@
 import React from 'react';
 import StatCard from '../components/StatCard';
+import ViolenceTypeChart from '../components/stats/ViolenceTypeChart';
+import AgeGroupChart from '../components/stats/AgeGroupChart';
+import SharingStats from '../components/stats/SharingStats';
+import ViolenceReasonsChart from '../components/stats/ViolenceReasonsChart';
+import { useTuikData } from '../contexts/TuikDataContext';
 import '../styles/global.css';
+import '../styles/stats-detail.css';
 
 const Stats = () => {
+  const { metadata } = useTuikData();
   const mainStats = [
     { number: '183', label: 'ALO Şiddet Hattı', icon: '📞' },
     { number: '81', label: 'İlde ŞÖNİM Merkezi', icon: '🏢' },
@@ -222,6 +229,37 @@ const Stats = () => {
         </div>
       </section>
 
+      {/* TÜİK Statistics Section */}
+      <section className="section" style={{ background: 'linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%)', padding: '4rem 0' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h2 className="section-title">📊 TÜİK {metadata.year} Araştırma Verileri</h2>
+            <p style={{ 
+              fontSize: '1.1rem', 
+              color: '#6B7280',
+              maxWidth: '800px',
+              margin: '0 auto'
+            }}>
+              Türkiye Kadına Yönelik Şiddet Araştırması kapsamında {metadata.sampleSize?.toLocaleString()} kadın ile yapılan görüşmelerden elde edilen veriler.
+            </p>
+            <p style={{ 
+              fontSize: '0.9rem', 
+              color: '#9CA3AF',
+              marginTop: '0.5rem'
+            }}>
+              Kaynak: <a href={metadata.sourceUrl || '#'} target="_blank" rel="noopener noreferrer" style={{ color: '#8B5CF6', textDecoration: 'none' }}>
+                {metadata.source} - {metadata.year}
+              </a>
+            </p>
+          </div>
+
+          <ViolenceTypeChart />
+          <AgeGroupChart />
+          <ViolenceReasonsChart />
+          <SharingStats />
+        </div>
+      </section>
+
       {/* Emergency CTA */}
       <section className="section" style={{
         background: 'linear-gradient(135deg, var(--accent-orange) 0%, #F59E0B 100%)',
@@ -266,6 +304,7 @@ const Stats = () => {
 };
 
 export default Stats;
+
 
 
 
