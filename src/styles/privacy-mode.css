@@ -1,0 +1,85 @@
+/* Privacy Mode Styles */
+
+.privacy-mode-container {
+  position: relative;
+  display: inline-block;
+}
+
+.privacy-mode-btn {
+  background: transparent;
+  border: 2px solid var(--primary-purple, #8B5CF6);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0;
+  font-size: 1.2rem;
+}
+
+.privacy-mode-btn:hover {
+  background: rgba(139, 92, 246, 0.1);
+  transform: scale(1.1);
+}
+
+.privacy-mode-btn.active {
+  background: var(--primary-purple, #8B5CF6);
+  border-color: var(--primary-purple, #8B5CF6);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.3);
+  animation: pulse 2s infinite;
+}
+
+.privacy-mode-btn.active .privacy-mode-icon {
+  filter: brightness(0) invert(1);
+}
+
+.privacy-mode-icon {
+  font-size: 1.2rem;
+  display: block;
+}
+
+.privacy-mode-indicator {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 10px;
+  height: 10px;
+  background: #10B981;
+  border-radius: 50%;
+  border: 2px solid white;
+  animation: pulse-dot 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(139, 92, 246, 0.1);
+  }
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.2);
+  }
+}
+
+/* Mobile */
+@media (max-width: 968px) {
+  .privacy-mode-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+}
+

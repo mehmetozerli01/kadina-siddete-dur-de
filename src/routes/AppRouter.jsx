@@ -20,8 +20,11 @@ const ChildrenHome = lazy(() => import('../pages/ChildrenHome'));
 const ChildrenStories = lazy(() => import('../pages/ChildrenStories'));
 const ChildrenGames = lazy(() => import('../pages/ChildrenGames'));
 const ChildrenSafety = lazy(() => import('../pages/ChildrenSafety'));
+const ChildrenSafetyGame = lazy(() => import('../pages/ChildrenSafetyGame'));
+const ChildrenEmotions = lazy(() => import('../pages/ChildrenEmotions'));
 const ChildrenColoring = lazy(() => import('../pages/ChildrenColoring'));
 const ParentGuide = lazy(() => import('../pages/ParentGuide'));
+const LegalRights = lazy(() => import('../pages/LegalRights'));
 
 // Loading component
 const LoadingSpinner = () => (
@@ -70,9 +73,13 @@ const AppRouter = () => {
             <Route path="çocuklar/hikayeler" element={<ChildrenStories />} />
             <Route path="çocuklar/oyunlar" element={<ChildrenGames />} />
             <Route path="çocuklar/güvenlik" element={<ChildrenSafety />} />
+            <Route path="çocuklar/güvenlik-oyunu" element={<ChildrenSafetyGame />} />
+            <Route path="çocuklar/duygular" element={<ChildrenEmotions />} />
             <Route path="çocuklar/acil-yardım" element={<ChildrenSafety />} />
             <Route path="çocuklar/boyama" element={<ChildrenColoring />} />
             <Route path="çocuklar/ebeveyn-rehberi" element={<ParentGuide />} />
+            {/* Yasal Haklar */}
+            <Route path="yasal-haklar" element={<LegalRights />} />
           </Route>
         </Routes>
       </Suspense>

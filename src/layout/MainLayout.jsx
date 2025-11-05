@@ -29,6 +29,25 @@ const MainLayout = () => {
     };
   }, [navigate]);
 
+  // Gizli navigasyon: URL'de #safe varsa gizli modu aktif et
+  useEffect(() => {
+    const handleHashChange = () => {
+      if (window.location.hash === '#safe') {
+        // PrivacyMode komponenti bunu handle edecek
+        localStorage.setItem('privacyMode', 'true');
+      }
+    };
+
+    // İlk yükleme
+    handleHashChange();
+
+    // Hash değişikliklerini dinle
+    window.addEventListener('hashchange', handleHashChange);
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []);
+
   return (
     <div className="app-wrapper">
       <Navbar />

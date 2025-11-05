@@ -30,10 +30,24 @@ const ChildrenHome = () => {
       color: '#F59E0B'
     },
     {
+      icon: '🎯',
+      title: 'Güvenlik Oyunu',
+      description: 'Soruları cevapla ve öğren!',
+      link: '/çocuklar/güvenlik-oyunu',
+      color: '#EF4444'
+    },
+    {
       icon: '🎨',
       title: 'Boyama',
       description: 'Renkli boyama sayfaları',
       link: '/çocuklar/boyama',
+      color: '#EC4899'
+    },
+    {
+      icon: '💭',
+      title: 'Duygularım',
+      description: 'Duygularını tanı ve ifade et',
+      link: '/çocuklar/duygular',
       color: '#EC4899'
     }
   ];

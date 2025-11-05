@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
 import ThemeToggle from './ThemeToggle';
+import PrivacyMode from './PrivacyMode';
 import '../styles/navbar.css';
 
 const Navbar = () => {
@@ -25,7 +26,7 @@ const Navbar = () => {
   };
 
   const isDropdownItemActive = () => {
-    const dropdownPaths = ['/live-stats', '/scenarios', '/violence-map', '/library', '/sosyal-paylaşım', '/güvenlik-planı'];
+    const dropdownPaths = ['/live-stats', '/scenarios', '/violence-map', '/library', '/sosyal-paylaşım', '/güvenlik-planı', '/yasal-haklar'];
     return dropdownPaths.some(path => location.pathname === path);
   };
 
@@ -209,6 +210,17 @@ const Navbar = () => {
                     <span>{t('navbar.safetyPlan')}</span>
                   </Link>
                 </li>
+                <li role="none">
+                  <Link
+                    to="/yasal-haklar"
+                    className={`dropdown-item ${isActive('/yasal-haklar') ? 'active' : ''}`}
+                    onClick={closeMenu}
+                    role="menuitem"
+                  >
+                    <span className="dropdown-icon">⚖️</span>
+                    <span>Yasal Haklar</span>
+                  </Link>
+                </li>
               </ul>
             </li>
             <li className="navbar-item" role="none">
@@ -227,6 +239,7 @@ const Navbar = () => {
           
           {/* Dil Değiştirici - Menü Dışında */}
           <div className="navbar-language-wrapper">
+            <PrivacyMode />
             <ThemeToggle />
             <LanguageSwitcher />
           </div>

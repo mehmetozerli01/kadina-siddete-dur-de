@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
+import PDFViewer from '../components/PDFViewer';
+import VideoPlayer from '../components/VideoPlayer';
 import '../styles/global.css';
 import '../styles/library.css';
 
 const Library = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
+  const [selectedPDF, setSelectedPDF] = useState(null);
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
   const resources = [
     {
@@ -119,11 +123,18 @@ const Library = () => {
       // Arama için
       window.location.href = resource.link;
     } else if (resource.action === 'openPDF') {
-      // PDF'i yeni sekmede aç
-      window.open(resource.link, '_blank');
+      // PDF'i görüntüleyicide aç
+      setSelectedPDF({
+        url: resource.link,
+        title: resource.title
+      });
     } else if (resource.action === 'openVideo') {
-      // Video'yu yeni sekmede aç
-      window.open(resource.link, '_blank');
+      // Video'yu görüntüleyicide aç
+      setSelectedVideo({
+        url: resource.link,
+        title: resource.title,
+        description: resource.description
+      });
     } else if (resource.action === 'openLink') {
       // Link'i yeni sekmede aç (external) veya içeride (internal)
       if (resource.link.startsWith('http')) {
@@ -134,9 +145,17 @@ const Library = () => {
     }
   };
 
+  const closePDFViewer = () => {
+    setSelectedPDF(null);
+  };
+
+  const closeVideoPlayer = () => {
+    setSelectedVideo(null);
+  };
+
   const getActionText = (resource) => {
     if (resource.action === 'call') return '📞 Ara';
-    if (resource.type === 'pdf') return '📄 PDF İndir';
+    if (resource.type === 'pdf') return '📄 Görüntüle';
     if (resource.type === 'video') return '▶️ İzle';
     return '📖 Oku';
   };
@@ -221,6 +240,34 @@ const Library = () => {
           </div>
         </div>
       </section>
+
+      {/* PDF Viewer Modal */}
+      {selectedPDF && (
+        <div className="pdf-modal-overlay" onClick={closePDFViewer}>
+          <div className="pdf-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="pdf-modal-close" onClick={closePDFViewer}>
+              ✕
+            </button>
+            <PDFViewer pdfUrl={selectedPDF.url} title={selectedPDF.title} />
+          </div>
+        </div>
+      )}
+
+      {/* Video Player Modal */}
+      {selectedVideo && (
+        <div className="pdf-modal-overlay" onClick={closeVideoPlayer}>
+          <div className="pdf-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="pdf-modal-close" onClick={closeVideoPlayer}>
+              ✕
+            </button>
+            <VideoPlayer 
+              videoUrl={selectedVideo.url} 
+              title={selectedVideo.title}
+              description={selectedVideo.description}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,0 +1,325 @@
+/* Legal Rights Styles */
+
+.legal-rights-page {
+  min-height: 100vh;
+}
+
+.rights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.rights-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-top: 4px solid var(--section-color, #8B5CF6);
+}
+
+.dark-mode .rights-card {
+  background: var(--bg-card, #1F2937);
+}
+
+.rights-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.rights-card.expanded {
+  border-top-width: 6px;
+}
+
+.rights-card-header {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.dark-mode .rights-card-header {
+  border-bottom-color: #374151;
+}
+
+.rights-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.rights-card-header h3 {
+  flex: 1;
+  margin: 0;
+  color: var(--text-primary, #1f2937);
+  font-size: 1.3rem;
+}
+
+.dark-mode .rights-card-header h3 {
+  color: var(--text-primary, #F9FAFB);
+}
+
+.expand-icon {
+  font-size: 1.2rem;
+  color: var(--section-color, #8B5CF6);
+  transition: transform 0.3s ease;
+}
+
+.rights-card.expanded .expand-icon {
+  transform: rotate(180deg);
+}
+
+.rights-card-content {
+  padding: 1.5rem;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rights-description {
+  color: var(--text-secondary, #6B7280);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.dark-mode .rights-description {
+  color: var(--text-secondary, #9CA3AF);
+}
+
+.key-points,
+.articles {
+  margin-bottom: 1.5rem;
+}
+
+.key-points h4,
+.articles h4 {
+  color: var(--text-primary, #1f2937);
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.dark-mode .key-points h4,
+.dark-mode .articles h4 {
+  color: var(--text-primary, #F9FAFB);
+}
+
+.key-points ul,
+.articles ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.key-points li,
+.articles li {
+  padding: 0.75rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--text-primary, #1f2937);
+  line-height: 1.6;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.dark-mode .key-points li,
+.dark-mode .articles li {
+  color: var(--text-primary, #F9FAFB);
+  border-bottom-color: #4B5563;
+}
+
+.key-points li:last-child,
+.articles li:last-child {
+  border-bottom: none;
+}
+
+.key-points li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--section-color, #8B5CF6);
+  font-weight: 700;
+}
+
+.articles li::before {
+  content: '📄';
+  position: absolute;
+  left: 0;
+}
+
+/* Application Steps */
+.application-steps {
+  margin-top: 1.5rem;
+}
+
+.application-steps h4 {
+  color: var(--text-primary, #1f2937);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.dark-mode .application-steps h4 {
+  color: var(--text-primary, #F9FAFB);
+}
+
+.step-card {
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: #F9FAFB;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--section-color, #8B5CF6);
+}
+
+.dark-mode .step-card {
+  background: #374151;
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  background: var(--section-color, #8B5CF6);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-content h5 {
+  color: var(--text-primary, #1f2937);
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.dark-mode .step-content h5 {
+  color: var(--text-primary, #F9FAFB);
+}
+
+.step-content p {
+  color: var(--text-secondary, #6B7280);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.dark-mode .step-content p {
+  color: var(--text-secondary, #9CA3AF);
+}
+
+/* Emergency Help Card */
+.emergency-help-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.dark-mode .emergency-help-card {
+  background: var(--bg-card, #1F2937);
+}
+
+.emergency-help-card h2 {
+  color: var(--primary-purple, #8B5CF6);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.emergency-help-card > p {
+  color: var(--text-secondary, #6B7280);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.help-numbers {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.help-number {
+  background: linear-gradient(135deg, var(--primary-purple, #8B5CF6) 0%, var(--primary-purple-dark, #6D28D9) 100%);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.help-number:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+}
+
+.help-note {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #FEF3C7;
+  border-radius: 12px;
+  color: #92400E;
+  line-height: 1.8;
+  text-align: left;
+}
+
+.dark-mode .help-note {
+  background: #78350F;
+  color: #FDE68A;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .rights-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .rights-card-header {
+    padding: 1rem;
+  }
+
+  .rights-card-content {
+    padding: 1rem;
+  }
+
+  .step-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .step-number {
+    margin: 0 auto;
+  }
+
+  .help-numbers {
+    gap: 0.75rem;
+  }
+
+  .help-number {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
