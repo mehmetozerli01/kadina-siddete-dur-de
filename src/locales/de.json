@@ -191,6 +191,33 @@
     "callEmergency": "Sofort im Notfall anrufen",
     "callEmergencyText": "Wenn dein Leben in Gefahr ist, rufe 155 an; wenn du Unterstützung brauchst, rufe 183 an."
   },
+  "quickExit": {
+    "buttonLabel": "Schneller Ausstieg",
+    "tooltip": "Seite sofort verlassen"
+  },
+  "quickHelp": {
+    "title": "Schnelle Hilfe",
+    "header": "Brauchen Sie jetzt Hilfe?",
+    "message": "Wenn Sie sich unsicher fühlen, rufen Sie diese Nummern an oder öffnen Sie die Hilfeseite.",
+    "open": "Schnellhilfe öffnen",
+    "close": "Schnellhilfe schließen",
+    "callSonim": "183 – Frauen-Hotline",
+    "callSonimAria": "183 Frauen-Hotline anrufen",
+    "callPolice": "155 Polizei",
+    "callPoliceAria": "Notruf 155 anrufen",
+    "callHealth": "112 Medizinischer Notruf",
+    "callHealthAria": "Medizinischen Notruf 112 anrufen",
+    "privacyMode": "Privatmodus aktivieren",
+    "openHelpCenter": "Hilfsnummern anzeigen",
+    "openViolenceMap": "Gewaltkarte öffnen",
+    "liveSupportTitle": "Live-Chat Unterstützung",
+    "liveSupportDesc": "Anonym schreiben und sichere Hilfe erhalten",
+    "liveSupportAria": "Live-Chat Unterstützung öffnen",
+    "voiceSupportTitle": "Sprach-Notfallhilfe",
+    "voiceSupportDesc": "Mit Sprachbefehlen und Panikknopf Hilfe anfordern",
+    "voiceSupportAria": "Sprach-Notfallhilfe öffnen",
+    "disclaimer": "Anrufe erfolgen über Ihr Gerät. Nutzen Sie bei Bedarf den Schnell-Ausgang."
+  },
   "theme": {
     "lightMode": "Hellmodus",
     "darkMode": "Dunkelmodus",

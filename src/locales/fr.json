@@ -191,6 +191,33 @@
     "callEmergency": "Appeler immédiatement en cas d'urgence",
     "callEmergencyText": "Si ta vie est en danger, appelle le 155 ; si tu as besoin de soutien, appelle le 183."
   },
+  "quickExit": {
+    "buttonLabel": "Sortie rapide",
+    "tooltip": "Quitter le site immédiatement"
+  },
+  "quickHelp": {
+    "title": "Aide rapide",
+    "header": "Besoin d'aide maintenant ?",
+    "message": "Si tu ne te sens pas en sécurité, appelle ces numéros ou ouvre la page d'aide.",
+    "open": "Ouvrir le panneau d'aide rapide",
+    "close": "Fermer le panneau d'aide rapide",
+    "callSonim": "183 — Ligne d'écoute femmes",
+    "callSonimAria": "Appeler la ligne 183 pour les femmes",
+    "callPolice": "155 Police",
+    "callPoliceAria": "Appeler l'urgence police 155",
+    "callHealth": "112 Urgences médicales",
+    "callHealthAria": "Appeler le service d'urgence 112",
+    "privacyMode": "Activer le mode confidentiel",
+    "openHelpCenter": "Voir les numéros d'aide",
+    "openViolenceMap": "Ouvrir la carte des violences",
+    "liveSupportTitle": "Chat de soutien",
+    "liveSupportDesc": "Écris anonymement et reçois un accompagnement sûr",
+    "liveSupportAria": "Ouvrir le chat de soutien",
+    "voiceSupportTitle": "Assistance vocale",
+    "voiceSupportDesc": "Utilise les commandes vocales et le bouton panique",
+    "voiceSupportAria": "Ouvrir l'assistance vocale",
+    "disclaimer": "Les appels se font via ton appareil. Utilise le bouton de sortie rapide si nécessaire."
+  },
   "theme": {
     "lightMode": "Mode Clair",
     "darkMode": "Mode Sombre",

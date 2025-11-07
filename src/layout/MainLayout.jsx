@@ -8,6 +8,7 @@ import LocationFinder from '../components/LocationFinder';
 import VoiceEmergency from '../components/VoiceEmergency';
 import RiskAnalyzer from '../components/RiskAnalyzer';
 import QuickExit from '../components/QuickExit';
+import QuickHelpPanel from '../components/QuickHelpPanel';
 import BackToTop from '../components/BackToTop';
 
 const MainLayout = () => {
@@ -58,15 +59,16 @@ const MainLayout = () => {
       
       {/* Emergency Support Components */}
       <LocationFinder />
-      <ChatSystem />
+      <ChatSystem showFloatingButton={false} />
       <CrisisPanel />
       
       {/* New AI-Powered Features */}
-      <VoiceEmergency />
+      <VoiceEmergency showFloatingButton={false} />
       <RiskAnalyzer />
       
       {/* Security Features */}
       <QuickExit />
+      <QuickHelpPanel />
       
       {/* UI Enhancements */}
       <BackToTop />

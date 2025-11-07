@@ -191,6 +191,33 @@
     "callEmergency": "Call Immediately in Emergency",
     "callEmergencyText": "If your life is in danger, call 155; if you need support, call 183."
   },
+  "quickExit": {
+    "buttonLabel": "Quick Exit",
+    "tooltip": "Leave the site instantly"
+  },
+  "quickHelp": {
+    "title": "Quick Help",
+    "header": "Need help now?",
+    "message": "If you feel unsafe, call these lines or open the help page.",
+    "open": "Open quick help panel",
+    "close": "Close quick help panel",
+    "callSonim": "183 — Women Support Line",
+    "callSonimAria": "Call the 183 women support line",
+    "callPolice": "155 Police",
+    "callPoliceAria": "Call the 155 police emergency line",
+    "callHealth": "112 Medical",
+    "callHealthAria": "Call the 112 medical emergency line",
+    "privacyMode": "Enable privacy mode",
+    "openHelpCenter": "View help lines",
+    "openViolenceMap": "Open violence map",
+    "liveSupportTitle": "Live Support Chat",
+    "liveSupportDesc": "Talk anonymously and get safe guidance",
+    "liveSupportAria": "Open live support chat",
+    "voiceSupportTitle": "Voice Emergency",
+    "voiceSupportDesc": "Use voice commands and panic button for help",
+    "voiceSupportAria": "Open voice emergency panel",
+    "disclaimer": "Calls are placed through your device. Stay safe and use the quick exit button if needed."
+  },
   "theme": {
     "lightMode": "Light Mode",
     "darkMode": "Dark Mode",

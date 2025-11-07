@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import '../styles/chat.css';
 
-const ChatSystem = () => {
+const ChatSystem = ({ showFloatingButton = true }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState('');
@@ -74,7 +74,12 @@ const ChatSystem = () => {
     }
   };
 
-  const startChat = () => {
+  const openNamePrompt = useCallback(() => {
+    setShowNameInput(true);
+    setIsOpen(false);
+  }, []);
+
+  const startChat = useCallback(() => {
     if (!userName.trim()) return;
     setShowNameInput(false);
     setIsOpen(true);
@@ -91,27 +96,51 @@ const ChatSystem = () => {
     };
     
     setMessages([welcomeMessage]);
-  };
+  }, [userName]);
 
-  const closeChat = () => {
+  const closeChat = useCallback(() => {
     setIsOpen(false);
     setMessages([]);
     setShowNameInput(false);
     setUserName('');
-  };
+  }, []);
 
   const emergencyCall = () => {
     window.open('tel:183', '_self');
   };
 
-  if (showNameInput) {
-    return (
-      <div className="chat-widget">
-        <div className="chat-toggle" onClick={() => setShowNameInput(true)}>
+  useEffect(() => {
+    const handleControl = (event) => {
+      const action = event.detail?.action || event.detail;
+      if (!action) return;
+
+      if (action === 'open') {
+        openNamePrompt();
+      } else if (action === 'close') {
+        closeChat();
+      } else if (action === 'toggle') {
+        if (isOpen || showNameInput) {
+          closeChat();
+        } else {
+          openNamePrompt();
+        }
+      }
+    };
+
+    window.addEventListener('chatSystem:control', handleControl);
+    return () => window.removeEventListener('chatSystem:control', handleControl);
+  }, [isOpen, showNameInput, closeChat, openNamePrompt]);
+
+  return (
+    <div className="chat-widget">
+      {showFloatingButton && !isOpen && !showNameInput && (
+        <div className="chat-toggle" onClick={openNamePrompt}>
           <span className="chat-icon">💬</span>
           <span className="chat-text">Destek Chat</span>
         </div>
-        
+      )}
+
+      {showNameInput && (
         <div className="chat-name-modal">
           <div className="chat-name-content">
             <button 
@@ -144,18 +173,9 @@ const ChatSystem = () => {
             </div>
           </div>
         </div>
-      </div>
-    );
-  }
+      )}
 
-  return (
-    <div className="chat-widget">
-      {!isOpen ? (
-        <div className="chat-toggle" onClick={() => setShowNameInput(true)}>
-          <span className="chat-icon">💬</span>
-          <span className="chat-text">Destek Chat</span>
-        </div>
-      ) : (
+      {isOpen && (
         <div className="chat-container">
           <div className="chat-header">
             <div className="chat-title">

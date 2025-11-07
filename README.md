@@ -13,6 +13,7 @@ Kadına yönelik şiddete karşı toplumsal farkındalık oluşturmak ve mağdur
 - 💬 **Hikayeler**: Umut dolu başarı hikayeleri
 - 📊 **İstatistikler**: Şiddet türleri ve destek hizmetleri hakkında bilgiler
 - 🆘 **Acil Yardım**: Yardım hatları ve acil durum bilgileri
+- ⚡ **Hızlı Yardım Paneli**: Tüm sayfalarda acil numaralara ve gizlilik araçlarına tek tık
 - ℹ️ **Hakkımızda**: Proje hakkında detaylı bilgiler
 - 🎭 **Senaryo Oyunu**: Gerçek hayattan alınmış senaryolarla interaktif eğitim
 - 🗺️ **Şiddet Haritası**: Türkiye'de şiddet verilerinin görselleştirilmesi

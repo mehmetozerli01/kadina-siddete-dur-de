@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import '../styles/voice-emergency.css';
 
-const VoiceEmergency = () => {
+const VoiceEmergency = ({ showFloatingButton = true }) => {
   const [isListening, setIsListening] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const [isWidgetOpen, setIsWidgetOpen] = useState(false);
@@ -13,12 +13,119 @@ const VoiceEmergency = () => {
   const audioChunks = useRef([]);
   const mediaRecorder = useRef(null);
 
+  const saveEmergencyRecording = useCallback((audioBlob) => {
+    if (!('indexedDB' in window)) {
+      return;
+    }
+
+    const request = indexedDB.open('EmergencyRecordings', 1);
+
+    request.onsuccess = (event) => {
+      const db = event.target.result;
+      const transaction = db.transaction(['recordings'], 'readwrite');
+      const objectStore = transaction.objectStore('recordings');
+      const recording = {
+        id: Date.now(),
+        audio: audioBlob,
+        timestamp: new Date(),
+        location
+      };
+      objectStore.add(recording);
+    };
+
+    request.onupgradeneeded = (event) => {
+      const db = event.target.result;
+      db.createObjectStore('recordings');
+    };
+  }, [location]);
+
+  const logEmergency = useCallback((loc, timestamp) => {
+    const log = {
+      timestamp,
+      location: loc,
+      riskLevel,
+      action: 'emergency_call'
+    };
+
+    const logs = JSON.parse(localStorage.getItem('emergency_logs') || '[]');
+    logs.push(log);
+    const recentLogs = logs.slice(-10);
+    localStorage.setItem('emergency_logs', JSON.stringify(recentLogs));
+  }, [riskLevel]);
+
+  // Ses kaydı başlat
+  const startAudioRecording = useCallback(async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const recorder = new MediaRecorder(stream);
+      mediaRecorder.current = recorder;
+      audioChunks.current = [];
+
+      recorder.ondataavailable = (event) => {
+        audioChunks.current.push(event.data);
+      };
+
+      recorder.onstop = () => {
+        const audioBlob = new Blob(audioChunks.current, { type: 'audio/webm' });
+        saveEmergencyRecording(audioBlob);
+      };
+
+      recorder.start();
+
+      setTimeout(() => {
+        if (recorder.state !== 'inactive') {
+          recorder.stop();
+          stream.getTracks().forEach(track => track.stop());
+        }
+      }, 30000);
+    } catch (error) {
+      console.log('Mikrofon erişimi reddedildi:', error);
+    }
+  }, [saveEmergencyRecording]);
+
+  const sendLocationViaSMS = useCallback(() => {
+    if (location) {
+      const message = `🚨 ACİL DURUM\nKonum: https://maps.google.com/?q=${location.lat},${location.lng}\nTarih: ${new Date().toLocaleString('tr-TR')}\n\nPlease help!`;
+      const smsUrl = `sms:183&body=${encodeURIComponent(message)}`;
+      window.open(smsUrl, '_self');
+    }
+  }, [location]);
+
+  // Panic mode aktivasyonu
+  const activatePanicMode = useCallback(() => {
+    setPanicMode(true);
+    setRiskLevel(100);
+
+    startAudioRecording();
+
+    setTimeout(() => {
+      window.open('tel:183', '_self');
+    }, 3000);
+
+    sendLocationViaSMS();
+    logEmergency(location, new Date());
+  }, [location, logEmergency, sendLocationViaSMS, startAudioRecording]);
+
+  const handleVoiceCommand = useCallback((command) => {
+    const emergencyCommands = [
+      'acil yardım', 'emergency', 'panic', 'help', 'yardım et',
+      'polisi ara', 'call police', 'imdat', 'save me', 'bana yardım edin'
+    ];
+
+    const commands = command.toLowerCase();
+    const isEmergency = emergencyCommands.some(cmd => commands.includes(cmd));
+
+    if (isEmergency) {
+      activatePanicMode();
+      setRiskLevel(95);
+    }
+  }, [activatePanicMode]);
+
   useEffect(() => {
-    // Sesli komut sistemi kurulumu
     if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
       const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
       const recognitionInstance = new SpeechRecognition();
-      
+
       recognitionInstance.lang = 'tr-TR,en-US';
       recognitionInstance.continuous = true;
       recognitionInstance.interimResults = true;
@@ -41,7 +148,6 @@ const VoiceEmergency = () => {
       recognitionInstance.onend = () => {
         setIsListening(false);
         if (isActive) {
-          // Sürekli dinleme modu
           recognitionInstance.start();
         }
       };
@@ -49,7 +155,6 @@ const VoiceEmergency = () => {
       setRecognition(recognitionInstance);
     }
 
-    // Konum bilgisi al
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
@@ -64,24 +169,23 @@ const VoiceEmergency = () => {
       );
     }
 
-    // Panic button tuş kombinasyonu (ESC + ESC + ESC veya Space + Space + Space)
     let escapeClicks = 0;
     let spaceClicks = 0;
-    
+
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') {
         escapeClicks++;
         setTimeout(() => { escapeClicks = 0; }, 2000);
-        
+
         if (escapeClicks === 3) {
           activatePanicMode();
         }
       }
-      
+
       if (e.key === ' ') {
         spaceClicks++;
         setTimeout(() => { spaceClicks = 0; }, 1000);
-        
+
         if (spaceClicks === 3) {
           activatePanicMode();
         }
@@ -89,129 +193,10 @@ const VoiceEmergency = () => {
     };
 
     document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [isActive]);
-
-  // Sesli komut işleme
-  const handleVoiceCommand = (command) => {
-    const emergencyCommands = [
-      'acil yardım', 'emergency', 'panic', 'help', 'yardım et',
-      'polisi ara', 'call police', 'imdat', 'save me', 'bana yardım edin'
-    ];
-
-    const commands = command.toLowerCase();
-    const isEmergency = emergencyCommands.some(cmd => commands.includes(cmd));
-
-    if (isEmergency) {
-      activatePanicMode();
-      setRiskLevel(95);
-    }
-  };
-
-  // Panic mode aktivasyonu
-  const activatePanicMode = () => {
-    setPanicMode(true);
-    setRiskLevel(100);
-    
-    // Ses kaydı başlat
-    startAudioRecording();
-    
-    // 3 saniye sonra otomatik arama
-    setTimeout(() => {
-      window.open('tel:183', '_self');
-    }, 3000);
-
-    // SMS ile konum gönder
-    if (location) {
-      sendLocationViaSMS();
-    }
-
-    // Log kaydı (gizli)
-    logEmergency(location, new Date());
-  };
-
-  // Ses kaydı başlat
-  const startAudioRecording = async () => {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      const recorder = new MediaRecorder(stream);
-      mediaRecorder.current = recorder;
-      audioChunks.current = [];
-
-      recorder.ondataavailable = (event) => {
-        audioChunks.current.push(event.data);
-      };
-
-      recorder.onstop = () => {
-        const audioBlob = new Blob(audioChunks.current, { type: 'audio/webm' });
-        saveEmergencyRecording(audioBlob);
-      };
-
-      recorder.start();
-      
-      // 30 saniye kaydet
-      setTimeout(() => {
-        if (recorder.state !== 'inactive') {
-          recorder.stop();
-          stream.getTracks().forEach(track => track.stop());
-        }
-      }, 30000);
-    } catch (error) {
-      console.log('Mikrofon erişimi reddedildi:', error);
-    }
-  };
-
-  // Ses kaydını sakla (indexedDB)
-  const saveEmergencyRecording = (audioBlob) => {
-    if ('indexedDB' in window) {
-      const request = indexedDB.open('EmergencyRecordings', 1);
-      
-      request.onsuccess = (event) => {
-        const db = event.target.result;
-        const transaction = db.transaction(['recordings'], 'readwrite');
-        const objectStore = transaction.objectStore('recordings');
-        const recording = {
-          id: Date.now(),
-          audio: audioBlob,
-          timestamp: new Date(),
-          location: location
-        };
-        objectStore.add(recording);
-      };
-
-      request.onupgradeneeded = (event) => {
-        const db = event.target.result;
-        db.createObjectStore('recordings');
-      };
-    }
-  };
-
-  // SMS ile konum gönder
-  const sendLocationViaSMS = () => {
-    if (location) {
-      const message = `🚨 ACİL DURUM\nKonum: https://maps.google.com/?q=${location.lat},${location.lng}\nTarih: ${new Date().toLocaleString('tr-TR')}\n\nPlease help!`;
-      const smsUrl = `sms:183&body=${encodeURIComponent(message)}`;
-      window.open(smsUrl, '_self');
-    }
-  };
-
-  // Acil durum log kaydı
-  const logEmergency = (loc, timestamp) => {
-    const log = {
-      timestamp: timestamp,
-      location: loc,
-      riskLevel: riskLevel,
-      action: 'emergency_call'
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
     };
-
-    // LocalStorage'a kaydet (gizli)
-    const logs = JSON.parse(localStorage.getItem('emergency_logs') || '[]');
-    logs.push(log);
-    
-    // Son 10 kaydı sakla
-    const recentLogs = logs.slice(-10);
-    localStorage.setItem('emergency_logs', JSON.stringify(recentLogs));
-  };
+  }, [activatePanicMode, handleVoiceCommand, isActive]);
 
   // Sesli komut sistemini başlat
   const startVoiceControl = () => {
@@ -247,33 +232,40 @@ const VoiceEmergency = () => {
     }
   }, [detectedCommand, isListening]);
 
-  // Acil çıkış - siteyi kapat
-  const quickExit = () => {
-    // Tarayıcı geçmişini temizle
-    if ('history' in window) {
-      window.history.replaceState(null, null, 'about:blank');
-    }
-    
-    // Google'a yönlendir (zararsız görünüm)
-    window.location.href = 'https://www.google.com';
-    
-    // 1 saniye sonra tamamen çık
-    setTimeout(() => {
-      window.close();
-    }, 1000);
-  };
+  useEffect(() => {
+    const handleControl = (event) => {
+      const action = event.detail?.action || event.detail;
+      if (!action) return;
+
+      if (action === 'open') {
+        setIsWidgetOpen(true);
+      } else if (action === 'close') {
+        setIsWidgetOpen(false);
+      } else if (action === 'toggle') {
+        setIsWidgetOpen((prev) => !prev);
+      } else if (action === 'panic') {
+        setIsWidgetOpen(true);
+        activatePanicMode();
+      }
+    };
+
+    window.addEventListener('voiceEmergency:control', handleControl);
+    return () => window.removeEventListener('voiceEmergency:control', handleControl);
+  }, [activatePanicMode]);
 
   return (
     <>
       {/* Açılıp Kapanan Sesli Acil Yardım Widget */}
       {!isWidgetOpen ? (
-        <button
-          className="voice-toggle-btn"
-          onClick={() => setIsWidgetOpen(true)}
-          title="Sesli Acil Yardım"
-        >
-          <span className="toggle-icon">🎤</span>
-        </button>
+        showFloatingButton && (
+          <button
+            className="voice-toggle-btn"
+            onClick={() => setIsWidgetOpen(true)}
+            title="Sesli Acil Yardım"
+          >
+            <span className="toggle-icon">🎤</span>
+          </button>
+        )
       ) : (
         <div className={`voice-emergency-widget ${panicMode ? 'panic-active' : ''}`}>
           {/* Widget Header */}
